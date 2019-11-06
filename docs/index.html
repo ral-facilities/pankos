@@ -1,0 +1,1699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pankos</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">pyLODE</a></div>
+<h1>Pankos</h1>
+<section id="metadata">
+    <h2 style="display:none;">Metadata</h2>
+    <dl>
+        <dt>IRI</dt>
+        <dd><code>http://www.purl.org/pankos</code></dd>
+        <dt>Version Information</dt>
+        <dd>1.0</dd>
+        <dt>Imports</dt>
+        <dd>
+            <a href="http://purl.org/NET/dc_owl2dl/terms">http://purl.org/NET/dc_owl2dl/terms</a><br/>
+        </dd>
+        <dt>Ontology Source</dt>
+        <dd><a href="pankos.rdf">RDF (xml)</a></dd>
+    </dl>
+</section>
+<section id="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#objectproperties">Object Properties</a></li>
+        <li><a href="#annotationproperties">Annotation Properties</a></li>
+        <li><a href="#namespaces">Namespaces</a></li>
+    </ol>
+</section>
+<section id="overview">
+    <h2>Overview</h2>
+    <div class="figure">
+        <div style="width:500px; height:500px; background-color: black;">&nbsp;</div>
+        <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
+    </div>
+</section>
+<section id="classes">
+    <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#BackScatteringSpectrometer">BackScatteringSpectrometer</a></li>
+        <li><a href="#Decommissioned">Decommissioned</a></li>
+        <li><a href="#Dichroism">Dichroism</a></li>
+        <li><a href="#Diffraction">Diffraction</a></li>
+        <li><a href="#EnergyLevelValuePartition">EnergyLevelValuePartition</a></li>
+        <li><a href="#Facility">Facility</a></li>
+        <li><a href="#FileFormat">FileFormat</a></li>
+        <li><a href="#FluorescenceLuminescence">FluorescenceLuminescence</a></li>
+        <li><a href="#FreeElectronLaser">FreeElectronLaser</a></li>
+        <li><a href="#GammaRaySpectrometer">GammaRaySpectrometer</a></li>
+        <li><a href="#HighEnergy">HighEnergy</a></li>
+        <li><a href="#HighPressure">HighPressure</a></li>
+        <li><a href="#HighResolution">HighResolution</a></li>
+        <li><a href="#HighResolutionSpectrometer">HighResolutionSpectrometer</a></li>
+        <li><a href="#Imaging">Imaging</a></li>
+        <li><a href="#ImagingInstrument">ImagingInstrument</a></li>
+        <li><a href="#Instrument">Instrument</a></li>
+        <li><a href="#LS">LS</a></li>
+        <li><a href="#LargeScaleDiffractometer">LargeScaleDiffractometer</a></li>
+        <li><a href="#LaueSingleDiffractometer">LaueSingleDiffractometer</a></li>
+        <li><a href="#LowEngergy">LowEngergy</a></li>
+        <li><a href="#LowPressure">LowPressure</a></li>
+        <li><a href="#LowResolution">LowResolution</a></li>
+        <li><a href="#Luminescence">Luminescence</a></li>
+        <li><a href="#MXInstrument">MXInstrument</a></li>
+        <li><a href="#MediumEnergy">MediumEnergy</a></li>
+        <li><a href="#MediumPressure">MediumPressure</a></li>
+        <li><a href="#MediumResolution">MediumResolution</a></li>
+        <li><a href="#Microscope">Microscope</a></li>
+        <li><a href="#Microscopy">Microscopy</a></li>
+        <li><a href="#MuonSource">MuonSource</a></li>
+        <li><a href="#MuonSpectrometer">MuonSpectrometer</a></li>
+        <li><a href="#NeutronDiffraction">NeutronDiffraction</a></li>
+        <li><a href="#NeutronDiffractometer">NeutronDiffractometer</a></li>
+        <li><a href="#NeutronInterferometer">NeutronInterferometer</a></li>
+        <li><a href="#NeutronReflectometry">NeutronReflectometry</a></li>
+        <li><a href="#NeutronSource">NeutronSource</a></li>
+        <li><a href="#NeutronSpectrometer">NeutronSpectrometer</a></li>
+        <li><a href="#NeutronSpectroscopy">NeutronSpectroscopy</a></li>
+        <li><a href="#NexusParameters">NexusParameters</a></li>
+        <li><a href="#NuclearParticlePhysics">NuclearParticlePhysics</a></li>
+        <li><a href="#Operational">Operational</a></li>
+        <li><a href="#PhotonSource">PhotonSource</a></li>
+        <li><a href="#PowerDiffractometer">PowerDiffractometer</a></li>
+        <li><a href="#PressureLevelValuePartition">PressureLevelValuePartition</a></li>
+        <li><a href="#ProtonAccelerator">ProtonAccelerator</a></li>
+        <li><a href="#Quasi-LaueDiffractometer">Quasi-LaueDiffractometer</a></li>
+        <li><a href="#Reflectometer">Reflectometer</a></li>
+        <li><a href="#Reflectometry">Reflectometry</a></li>
+        <li><a href="#ResolutionLevelValuePartition">ResolutionLevelValuePartition</a></li>
+        <li><a href="#SANSInstrument">SANSInstrument</a></li>
+        <li><a href="#ScanningTransmissionX-rayMicroscope">ScanningTransmissionX-rayMicroscope</a></li>
+        <li><a href="#Scattering">Scattering</a></li>
+        <li><a href="#SingleCrystalDiffractometer">SingleCrystalDiffractometer</a></li>
+        <li><a href="#SmallAngleNeutronScattering">SmallAngleNeutronScattering</a></li>
+        <li><a href="#SmallAngleX-RayScattering">SmallAngleX-RayScattering</a></li>
+        <li><a href="#Spectrometer">Spectrometer</a></li>
+        <li><a href="#SpectroscopicPhotoemissionAndPhotoemissionElectronMicroscope">SpectroscopicPhotoemissionAndPhotoemissionElectronMicroscope</a></li>
+        <li><a href="#Spectroscopy">Spectroscopy</a></li>
+        <li><a href="#Spin-echoSpectrometer">Spin-echoSpectrometer</a></li>
+        <li><a href="#SpinEchoSANS">SpinEchoSANS</a></li>
+        <li><a href="#StatusValuePartition">StatusValuePartition</a></li>
+        <li><a href="#Synchrotron">Synchrotron</a></li>
+        <li><a href="#Technique">Technique</a></li>
+        <li><a href="#TestInstrument">TestInstrument</a></li>
+        <li><a href="#ThreeAxisSpectrometer">ThreeAxisSpectrometer</a></li>
+        <li><a href="#Time-of-flightSpectrometer">Time-of-flightSpectrometer</a></li>
+        <li><a href="#Tomography">Tomography</a></li>
+        <li><a href="#UnderConstruction">UnderConstruction</a></li>
+        <li><a href="#UnderProposal">UnderProposal</a></li>
+        <li><a href="#ValuePartition">ValuePartition</a></li>
+        <li><a href="#X-RayDiffraction">X-RayDiffraction</a></li>
+        <li><a href="#X-RayImaging">X-RayImaging</a></li>
+        <li><a href="#X-RayReflectometry">X-RayReflectometry</a></li>
+        <li><a href="#X-RaySpectroscopy">X-RaySpectroscopy</a></li>
+    </ul>
+    <div class="entity class" id="Decommissioned">
+        <h3>Decommissioned<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#Decommissioned</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#StatusValuePartition">protege-dc:StatusValuePartition</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="FileFormat">
+        <h3>FileFormat<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#FileFormat</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="HighPressure">
+        <h3>HighPressure<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#HighPressure</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#PressureLevelValuePartition">protege-dc:PressureLevelValuePartition</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="LowPressure">
+        <h3>LowPressure<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#LowPressure</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#PressureLevelValuePartition">protege-dc:PressureLevelValuePartition</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="MediumPressure">
+        <h3>MediumPressure<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#MediumPressure</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#PressureLevelValuePartition">protege-dc:PressureLevelValuePartition</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="NexusParameters">
+        <h3>NexusParameters<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#NexusParameters</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Operational">
+        <h3>Operational<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#Operational</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#StatusValuePartition">protege-dc:StatusValuePartition</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="PressureLevelValuePartition">
+        <h3>PressureLevelValuePartition<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#PressureLevelValuePartition</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#ValuePartition">pankos:ValuePartition</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#HighPressure">protege-dc:HighPressure</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#MediumPressure">protege-dc:MediumPressure</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#LowPressure">protege-dc:LowPressure</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#hasPressureLevel">protege-dc:hasPressureLevel</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="StatusValuePartition">
+        <h3>StatusValuePartition<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#StatusValuePartition</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#ValuePartition">pankos:ValuePartition</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#UnderConstruction">protege-dc:UnderConstruction</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#Decommissioned">protege-dc:Decommissioned</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#Operational">protege-dc:Operational</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#UnderProposal">protege-dc:UnderProposal</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#hasOperationStatus">protege-dc:hasOperationStatus</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="UnderConstruction">
+        <h3>UnderConstruction<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#UnderConstruction</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#StatusValuePartition">protege-dc:StatusValuePartition</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="UnderProposal">
+        <h3>UnderProposal<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#UnderProposal</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#StatusValuePartition">protege-dc:StatusValuePartition</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="BackScatteringSpectrometer">
+        <h3>BackScatteringSpectrometer<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#BackScatteringSpectrometer</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#NeutronSpectrometer">pankos:NeutronSpectrometer</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Dichroism">
+        <h3>Dichroism<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#Dichroism</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#X-RaySpectroscopy">pankos:X-RaySpectroscopy</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Diffraction">
+        <h3>Diffraction<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#Diffraction</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Technique">pankos:Technique</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#X-RayDiffraction">pankos:X-RayDiffraction</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#NeutronDiffraction">pankos:NeutronDiffraction</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="EnergyLevelValuePartition">
+        <h3>EnergyLevelValuePartition<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#EnergyLevelValuePartition</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#ValuePartition">pankos:ValuePartition</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#MediumEnergy">pankos:MediumEnergy</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#HighEnergy">pankos:HighEnergy</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#LowEngergy">pankos:LowEngergy</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Facility">
+        <h3>Facility<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#Facility</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#Thing">Thing</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#PhotonSource">pankos:PhotonSource</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#NeutronSource">pankos:NeutronSource</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#MuonSource">pankos:MuonSource</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Synchrotron">pankos:Synchrotron</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#ProtonAccelerator">pankos:ProtonAccelerator</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#FreeElectronLaser">pankos:FreeElectronLaser</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#usesFileFormat">protege-dc:usesFileFormat</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasInstrument">pankos:hasInstrument</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#inFacility">pankos:inFacility</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="FluorescenceLuminescence">
+        <h3>FluorescenceLuminescence<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#FluorescenceLuminescence</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Luminescence">pankos:Luminescence</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="FreeElectronLaser">
+        <h3>FreeElectronLaser<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#FreeElectronLaser</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Facility">pankos:Facility</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="GammaRaySpectrometer">
+        <h3>GammaRaySpectrometer<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#GammaRaySpectrometer</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Spectrometer">pankos:Spectrometer</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="HighEnergy">
+        <h3>HighEnergy<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#HighEnergy</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#EnergyLevelValuePartition">pankos:EnergyLevelValuePartition</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="HighResolution">
+        <h3>HighResolution<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#HighResolution</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#ResolutionLevelValuePartition">pankos:ResolutionLevelValuePartition</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="HighResolutionSpectrometer">
+        <h3>HighResolutionSpectrometer<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#HighResolutionSpectrometer</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Imaging">
+        <h3>Imaging<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#Imaging</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Technique">pankos:Technique</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#Tomography">pankos:Tomography</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#X-RayImaging">pankos:X-RayImaging</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Microscopy">pankos:Microscopy</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="ImagingInstrument">
+        <h3>ImagingInstrument<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#ImagingInstrument</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Instrument">pankos:Instrument</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Instrument">
+        <h3>Instrument<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#Instrument</code></td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#NeutronInterferometer">pankos:NeutronInterferometer</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Spectrometer">pankos:Spectrometer</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#NeutronDiffractometer">pankos:NeutronDiffractometer</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#TestInstrument">pankos:TestInstrument</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#MuonSpectrometer">pankos:MuonSpectrometer</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Reflectometer">pankos:Reflectometer</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#NuclearParticlePhysics">pankos:NuclearParticlePhysics</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Microscope">pankos:Microscope</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#ImagingInstrument">pankos:ImagingInstrument</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#MXInstrument">pankos:MXInstrument</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#SANSInstrument">pankos:SANSInstrument</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#supportsTechnique">pankos:supportsTechnique</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#inFacility">pankos:inFacility</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#techniqueOf">pankos:techniqueOf</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasInstrument">pankos:hasInstrument</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="LargeScaleDiffractometer">
+        <h3>LargeScaleDiffractometer<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#LargeScaleDiffractometer</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#NeutronDiffractometer">pankos:NeutronDiffractometer</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="LaueSingleDiffractometer">
+        <h3>LaueSingleDiffractometer<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#LaueSingleDiffractometer</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#NeutronDiffractometer">pankos:NeutronDiffractometer</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="LS">
+        <h3>LS<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#LightSALS/LS</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Scattering">pankos:Scattering</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="LowEngergy">
+        <h3>LowEngergy<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#LowEngergy</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#EnergyLevelValuePartition">pankos:EnergyLevelValuePartition</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="LowResolution">
+        <h3>LowResolution<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#LowResolution</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#ResolutionLevelValuePartition">pankos:ResolutionLevelValuePartition</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Luminescence">
+        <h3>Luminescence<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#Luminescence</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Technique">pankos:Technique</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#FluorescenceLuminescence">pankos:FluorescenceLuminescence</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="MXInstrument">
+        <h3>MXInstrument<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#MXInstrument</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Instrument">pankos:Instrument</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="MediumEnergy">
+        <h3>MediumEnergy<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#MediumEnergy</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#EnergyLevelValuePartition">pankos:EnergyLevelValuePartition</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="MediumResolution">
+        <h3>MediumResolution<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#MediumResolution</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#ResolutionLevelValuePartition">pankos:ResolutionLevelValuePartition</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Microscope">
+        <h3>Microscope<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#Microscope</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Instrument">pankos:Instrument</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#ScanningTransmissionX-rayMicroscope">pankos:ScanningTransmissionX-rayMicroscope</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#SpectroscopicPhotoemissionAndPhotoemissionElectronMicroscope">pankos:SpectroscopicPhotoemissionAndPhotoemissionElectronMicroscope</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Microscopy">
+        <h3>Microscopy<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#Microscopy</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Imaging">pankos:Imaging</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="MuonSource">
+        <h3>MuonSource<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#MuonSource</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Facility">pankos:Facility</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="MuonSpectrometer">
+        <h3>MuonSpectrometer<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#MuonSpectrometer</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Instrument">pankos:Instrument</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="NeutronDiffraction">
+        <h3>NeutronDiffraction<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#NeutronDiffraction</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Diffraction">pankos:Diffraction</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="NeutronDiffractometer">
+        <h3>NeutronDiffractometer<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#NeutronDiffractometer</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Instrument">pankos:Instrument</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#LaueSingleDiffractometer">pankos:LaueSingleDiffractometer</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#SingleCrystalDiffractometer">pankos:SingleCrystalDiffractometer</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Quasi-LaueDiffractometer">pankos:Quasi-LaueDiffractometer</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#LargeScaleDiffractometer">pankos:LargeScaleDiffractometer</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#PowerDiffractometer">pankos:PowerDiffractometer</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="NeutronInterferometer">
+        <h3>NeutronInterferometer<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#NeutronInterferometer</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Instrument">pankos:Instrument</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="NeutronReflectometry">
+        <h3>NeutronReflectometry<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#NeutronReflectometry</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Reflectometry">pankos:Reflectometry</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="NeutronSource">
+        <h3>NeutronSource<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#NeutronSource</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Facility">pankos:Facility</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="NeutronSpectrometer">
+        <h3>NeutronSpectrometer<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#NeutronSpectrometer</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Spectrometer">pankos:Spectrometer</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#Time-of-flightSpectrometer">pankos:Time-of-flightSpectrometer</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#ThreeAxisSpectrometer">pankos:ThreeAxisSpectrometer</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#BackScatteringSpectrometer">pankos:BackScatteringSpectrometer</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Spin-echoSpectrometer">pankos:Spin-echoSpectrometer</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="NeutronSpectroscopy">
+        <h3>NeutronSpectroscopy<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#NeutronSpectroscopy</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Spectroscopy">pankos:Spectroscopy</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="NuclearParticlePhysics">
+        <h3>NuclearParticlePhysics<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#NuclearParticlePhysics</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Instrument">pankos:Instrument</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="PhotonSource">
+        <h3>PhotonSource<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#PhotonSource</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Facility">pankos:Facility</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="PowerDiffractometer">
+        <h3>PowerDiffractometer<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#PowerDiffractometer</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#NeutronDiffractometer">pankos:NeutronDiffractometer</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#supportsTechnique">pankos:supportsTechnique</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">value</span> <a href="http://www.purl.org/pankos#PowderDiffraction">pankos:PowderDiffraction</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="ProtonAccelerator">
+        <h3>ProtonAccelerator<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#ProtonAccelerator</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Facility">pankos:Facility</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Quasi-LaueDiffractometer">
+        <h3>Quasi-LaueDiffractometer<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#Quasi-LaueDiffractometer</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#NeutronDiffractometer">pankos:NeutronDiffractometer</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Reflectometer">
+        <h3>Reflectometer<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#Reflectometer</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Instrument">pankos:Instrument</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Reflectometry">
+        <h3>Reflectometry<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#Reflectometry</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Technique">pankos:Technique</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#NeutronReflectometry">pankos:NeutronReflectometry</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#X-RayReflectometry">pankos:X-RayReflectometry</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="ResolutionLevelValuePartition">
+        <h3>ResolutionLevelValuePartition<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#ResolutionLevelValuePartition</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#ValuePartition">pankos:ValuePartition</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#HighResolution">pankos:HighResolution</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#MediumResolution">pankos:MediumResolution</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#LowResolution">pankos:LowResolution</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="SANSInstrument">
+        <h3>SANSInstrument<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#SANSInstrument</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Instrument">pankos:Instrument</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="ScanningTransmissionX-rayMicroscope">
+        <h3>ScanningTransmissionX-rayMicroscope<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#ScanningTransmissionX-rayMicroscope</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Microscope">pankos:Microscope</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Scattering">
+        <h3>Scattering<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#Scattering</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Technique">pankos:Technique</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#SmallAngleX-RayScattering">pankos:SmallAngleX-RayScattering</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#LS">pankos:LightSALS/LS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#SmallAngleNeutronScattering">pankos:SmallAngleNeutronScattering</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="SingleCrystalDiffractometer">
+        <h3>SingleCrystalDiffractometer<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#SingleCrystalDiffractometer</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#NeutronDiffractometer">pankos:NeutronDiffractometer</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="SmallAngleNeutronScattering">
+        <h3>SmallAngleNeutronScattering<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#SmallAngleNeutronScattering</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Scattering">pankos:Scattering</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#SpinEchoSANS">pankos:SpinEchoSANS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="SmallAngleX-RayScattering">
+        <h3>SmallAngleX-RayScattering<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#SmallAngleX-RayScattering</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Scattering">pankos:Scattering</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Spectrometer">
+        <h3>Spectrometer<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#Spectrometer</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Instrument">pankos:Instrument</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#NeutronSpectrometer">pankos:NeutronSpectrometer</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#GammaRaySpectrometer">pankos:GammaRaySpectrometer</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="SpectroscopicPhotoemissionAndPhotoemissionElectronMicroscope">
+        <h3>SpectroscopicPhotoemissionAndPhotoemissionElectronMicroscope<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#SpectroscopicPhotoemissionAndPhotoemissionElectronMicroscope</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Microscope">pankos:Microscope</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Spectroscopy">
+        <h3>Spectroscopy<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#Spectroscopy</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Technique">pankos:Technique</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#NeutronSpectroscopy">pankos:NeutronSpectroscopy</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#X-RaySpectroscopy">pankos:X-RaySpectroscopy</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Spin-echoSpectrometer">
+        <h3>Spin-echoSpectrometer<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#Spin-echoSpectrometer</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#NeutronSpectrometer">pankos:NeutronSpectrometer</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="SpinEchoSANS">
+        <h3>SpinEchoSANS<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#SpinEchoSANS</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#SmallAngleNeutronScattering">pankos:SmallAngleNeutronScattering</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Synchrotron">
+        <h3>Synchrotron<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#Synchrotron</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Facility">pankos:Facility</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Technique">
+        <h3>Technique<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#Technique</code></td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#supportsTechnique">pankos:supportsTechnique</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Technique">pankos:Technique</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#inFacility">pankos:inFacility</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Facility">pankos:Facility</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#Scattering">pankos:Scattering</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Luminescence">pankos:Luminescence</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Reflectometry">pankos:Reflectometry</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Diffraction">pankos:Diffraction</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Imaging">pankos:Imaging</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Spectroscopy">pankos:Spectroscopy</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#techniqueOf">pankos:techniqueOf</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#supportsTechnique">pankos:supportsTechnique</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="TestInstrument">
+        <h3>TestInstrument<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#TestInstrument</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Instrument">pankos:Instrument</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="ThreeAxisSpectrometer">
+        <h3>ThreeAxisSpectrometer<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#ThreeAxisSpectrometer</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#NeutronSpectrometer">pankos:NeutronSpectrometer</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Time-of-flightSpectrometer">
+        <h3>Time-of-flightSpectrometer<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#Time-of-flightSpectrometer</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#NeutronSpectrometer">pankos:NeutronSpectrometer</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Tomography">
+        <h3>Tomography<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#Tomography</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Imaging">pankos:Imaging</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="ValuePartition">
+        <h3>ValuePartition<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#ValuePartition</code></td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#EnergyLevelValuePartition">pankos:EnergyLevelValuePartition</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#ResolutionLevelValuePartition">pankos:ResolutionLevelValuePartition</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#StatusValuePartition">protege-dc:StatusValuePartition</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#PressureLevelValuePartition">protege-dc:PressureLevelValuePartition</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasResolutionLevel">pankos:hasResolutionLevel</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="X-RayDiffraction">
+        <h3>X-RayDiffraction<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#X-RayDiffraction</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Diffraction">pankos:Diffraction</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="X-RayImaging">
+        <h3>X-RayImaging<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#X-RayImaging</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Imaging">pankos:Imaging</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="X-RayReflectometry">
+        <h3>X-RayReflectometry<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#X-RayReflectometry</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Reflectometry">pankos:Reflectometry</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="X-RaySpectroscopy">
+        <h3>X-RaySpectroscopy<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#X-RaySpectroscopy</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Spectroscopy">pankos:Spectroscopy</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#Dichroism">pankos:Dichroism</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+<section id="objectproperties">
+    <h2>Object Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#hasOperationStatus">hasOperationStatus</a></li>
+        <li><a href="#hasPressureLevel">hasPressureLevel</a></li>
+        <li><a href="#usesFileFormat">usesFileFormat</a></li>
+        <li><a href="#hasEnergyLevel">hasEnergyLevel</a></li>
+        <li><a href="#hasInstrument">hasInstrument</a></li>
+        <li><a href="#hasResolutionLevel">hasResolutionLevel</a></li>
+        <li><a href="#hasSubFacility">hasSubFacility</a></li>
+        <li><a href="#inFacility">inFacility</a></li>
+        <li><a href="#supportsTechnique">supportsTechnique</a></li>
+        <li><a href="#techniqueOf">techniqueOf</a></li>
+    </ul>
+    <div class="entity property" id="hasOperationStatus">
+        <h3>hasOperationStatus<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#hasOperationStatus</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#StatusValuePartition">protege-dc:StatusValuePartition</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasPressureLevel">
+        <h3>hasPressureLevel<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#hasPressureLevel</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#PressureLevelValuePartition">protege-dc:PressureLevelValuePartition</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="usesFileFormat">
+        <h3>usesFileFormat<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#usesFileFormat</code></td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Facility">pankos:Facility</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasEnergyLevel">
+        <h3>hasEnergyLevel<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#hasEnergyLevel</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasInstrument">
+        <h3>hasInstrument<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#hasInstrument</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Facility">pankos:Facility</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Instrument">pankos:Instrument</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasResolutionLevel">
+        <h3>hasResolutionLevel<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#hasResolutionLevel</code></td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#ValuePartition">pankos:ValuePartition</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasSubFacility">
+        <h3>hasSubFacility<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#hasSubFacility</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="inFacility">
+        <h3>inFacility<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#inFacility</code></td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Instrument">pankos:Instrument</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Facility">pankos:Facility</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="supportsTechnique">
+        <h3>supportsTechnique<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#supportsTechnique</code></td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Instrument">pankos:Instrument</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Technique">pankos:Technique</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="techniqueOf">
+        <h3>techniqueOf<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#techniqueOf</code></td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Technique">pankos:Technique</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Instrument">pankos:Instrument</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section id="annotationproperties">
+    <h2>Annotation Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#preferredName">preferredName</a></li>
+    </ul>
+    <div class="entity property" id="preferredName">
+        <h3>preferredName<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.purl.org/pankos#preferredName</code></td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section id="namespaces">
+    <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <dl>
+        <dt><em>default (:)</em></dt>
+        <dd><code>http://www.purl.org/pankos#</code></dd>
+        <dt>:</dt>
+        <dd><code>http://www.w3.org/2002/07/owl#</code></dd>
+        <dt>dc</dt>
+        <dd><code>http://purl.org/NET/dc_owl2dl/terms#</code></dd>
+        <dt>pankos</dt>
+        <dd><code>http://www.purl.org/pankos#</code></dd>
+        <dt>protege-dc</dt>
+        <dd><code>http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#</code></dd>
+        <dt>rdf</dt>
+        <dd><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></dd>
+        <dt>rdfs</dt>
+        <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
+        <dt>skos</dt>
+        <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
+        <dt>xml</dt>
+        <dd><code>http://www.w3.org/XML/1998/namespace</code></dd>
+        <dt>xsd</dt>
+        <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
+    </dl>
+</section>
+<section id="legend">
+    <h2>Legend</h2>
+    <table class="entity">
+        <tr><td><sup class="sup-c" title="Classes">c</sup></td><td>Classes</td></tr>
+        <tr><td><sup class="sup-op" title="Object Properties">op</sup></td><td>Object Properties</td></tr>
+        <tr><td><sup class="sup-fp" title="Functional Properties">fp</sup></td><td>Functional Properties</td></tr>
+        <tr><td><sup class="sup-dp" title="Data Properties">dp</sup></td><td>Data Properties</td></tr>
+        <tr><td><sup class="sup-ap" title="Annotation Properties">dp</sup></td><td>Annotation Properties</td></tr>
+        <tr><td><sup class="sup-p" title="Properties">p</sup></td><td>Properties</td></tr>
+        <tr><td><sup class="sup-ni" title="Named Individuals">ni</sup></td><td>Named Individuals</td></tr>
+    </table>
+</section>
+</body>
+</html>
