@@ -1,0 +1,712 @@
+@prefix : <http://www.w3.org/2002/07/owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/mol17771/ontologies/stfcOnto> .
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto> rdf:type :Ontology ;
+                                                          
+                                                          rdfs:comment "An ontolgy describes physicla techniques used by various instruments from Proton and Neutron facilities around the world." .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#hasInstrument
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#hasInstrument> rdf:type :ObjectProperty ;
+                                                                        
+                                                                        :inverseOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#isInstrumentOf> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#isInstrumentOf
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#isInstrumentOf> rdf:type :ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#isTechniqueOf
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#isTechniqueOf> rdf:type :ObjectProperty ;
+                                                                        
+                                                                        :inverseOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#usesTechnique> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#usesTechnique
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#usesTechnique> rdf:type :ObjectProperty .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ANTARES
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ANTARES> rdf:type :Class ;
+                                                                  
+                                                                  rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEILInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Argus
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Argus> rdf:type :Class ;
+                                                                
+                                                                rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#CASSIOPÉE
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#CASSIOPÉE> rdf:type :Class ;
+                                                                    
+                                                                    rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEILInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#CRISTAL
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#CRISTAL> rdf:type :Class ;
+                                                                  
+                                                                  rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEILInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Crisp
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Crisp> rdf:type :Class ;
+                                                                
+                                                                rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#DEIMOS
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#DEIMOS> rdf:type :Class ;
+                                                                 
+                                                                 rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEILInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#DESIRS
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#DESIRS> rdf:type :Class ;
+                                                                 
+                                                                 rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEILInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#DIFFABS
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#DIFFABS> rdf:type :Class ;
+                                                                  
+                                                                  rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEILInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#DISCO
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#DISCO> rdf:type :Class ;
+                                                                
+                                                                rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEILInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Emu
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Emu> rdf:type :Class ;
+                                                              
+                                                              rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Engin-X
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Engin-X> rdf:type :Class ;
+                                                                  
+                                                                  rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Facility
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Facility> rdf:type :Class ;
+                                                                   
+                                                                   rdfs:subClassOf :Thing ,
+                                                                                   [ rdf:type :Restriction ;
+                                                                                     :onProperty <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#hasInstrument> ;
+                                                                                     :someValuesFrom <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Instrument>
+                                                                                   ] .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#GALAXIES
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#GALAXIES> rdf:type :Class ;
+                                                                   
+                                                                   rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEILInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Gem
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Gem> rdf:type :Class ;
+                                                              
+                                                              rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#HERMES
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#HERMES> rdf:type :Class ;
+                                                                 
+                                                                 rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEILInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Hifi
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Hifi> rdf:type :Class ;
+                                                               
+                                                               rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Hrpd
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Hrpd> rdf:type :Class ;
+                                                               
+                                                               rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ILES
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ILES> rdf:type :Class ;
+                                                               
+                                                               rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEILInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISIS
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISIS> rdf:type :Class ;
+                                                               
+                                                               :equivalentClass [ rdf:type :Class ;
+                                                                                  :intersectionOf ( <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Facility>
+                                                                                                    [ rdf:type :Restriction ;
+                                                                                                      :onProperty <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#hasInstrument> ;
+                                                                                                      :someValuesFrom <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument>
+                                                                                                    ]
+                                                                                                  )
+                                                                                ] ;
+                                                               
+                                                               :disjointWith <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEIL> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument> rdf:type :Class ;
+                                                                         
+                                                                         rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Instrument> ,
+                                                                                         [ rdf:type :Restriction ;
+                                                                                           :onProperty <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#isInstrumentOf> ;
+                                                                                           :allValuesFrom <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISIS>
+                                                                                         ] ;
+                                                                         
+                                                                         :disjointWith <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEILInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Ines
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Ines> rdf:type :Class ;
+                                                               
+                                                               rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Instrument
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Instrument> rdf:type :Class ;
+                                                                     
+                                                                     :equivalentClass [ rdf:type :Class ;
+                                                                                        :intersectionOf ( :Thing
+                                                                                                          [ rdf:type :Restriction ;
+                                                                                                            :onProperty <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#isInstrumentOf> ;
+                                                                                                            :someValuesFrom <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Facility>
+                                                                                                          ]
+                                                                                                          [ rdf:type :Restriction ;
+                                                                                                            :onProperty <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#usesTechnique> ;
+                                                                                                            :someValuesFrom <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Technique>
+                                                                                                          ]
+                                                                                                        )
+                                                                                      ] .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Inter
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Inter> rdf:type :Class ;
+                                                                
+                                                                rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Iris
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Iris> rdf:type :Class ;
+                                                               
+                                                               rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#LUCIA
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#LUCIA> rdf:type :Class ;
+                                                                
+                                                                rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEILInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Let
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Let> rdf:type :Class ;
+                                                              
+                                                              rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Loq
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Loq> rdf:type :Class ;
+                                                              
+                                                              rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#MARS
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#MARS> rdf:type :Class ;
+                                                               
+                                                               rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEILInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Maps
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Maps> rdf:type :Class ;
+                                                               
+                                                               rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Mari
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Mari> rdf:type :Class ;
+                                                               
+                                                               rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Merlin
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Merlin> rdf:type :Class ;
+                                                                 
+                                                                 rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#MuSR
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#MuSR> rdf:type :Class ;
+                                                               
+                                                               rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#MuonSpectroscopy
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#MuonSpectroscopy> rdf:type :Class ;
+                                                                           
+                                                                           rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Technique> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#MÉTROLOGIE
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#MÉTROLOGIE> rdf:type :Class ;
+                                                                     
+                                                                     rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEILInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#NANOSCOPIUM
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#NANOSCOPIUM> rdf:type :Class ;
+                                                                      
+                                                                      rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEILInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#NeutronDiffraction
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#NeutronDiffraction> rdf:type :Class ;
+                                                                             
+                                                                             rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Technique> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#NeutronPowderDiffraction
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#NeutronPowderDiffraction> rdf:type :Class ;
+                                                                                   
+                                                                                   rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Technique> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Nimrod
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Nimrod> rdf:type :Class ;
+                                                                 
+                                                                 rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ODE
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ODE> rdf:type :Class ;
+                                                              
+                                                              rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEILInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Offspec
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Offspec> rdf:type :Class ;
+                                                                  
+                                                                  rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Osiris
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Osiris> rdf:type :Class ;
+                                                                 
+                                                                 rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#PLÉIADES
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#PLÉIADES> rdf:type :Class ;
+                                                                   
+                                                                   rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEILInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#PROXIMA_1
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#PROXIMA_1> rdf:type :Class ;
+                                                                    
+                                                                    rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEILInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#PROXIMA_2
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#PROXIMA_2> rdf:type :Class ;
+                                                                    
+                                                                    rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEILInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#PSICHÉ
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#PSICHÉ> rdf:type :Class ;
+                                                                 
+                                                                 rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEILInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Pearl
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Pearl> rdf:type :Class ;
+                                                                
+                                                                rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Polaris
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Polaris> rdf:type :Class ;
+                                                                  
+                                                                  rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Polref
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Polref> rdf:type :Class ;
+                                                                 
+                                                                 rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Rotax
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Rotax> rdf:type :Class ;
+                                                                
+                                                                rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SAMBA
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SAMBA> rdf:type :Class ;
+                                                                
+                                                                rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEILInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SEXTANTS
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SEXTANTS> rdf:type :Class ;
+                                                                   
+                                                                   rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEILInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SIRIUS
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SIRIUS> rdf:type :Class ;
+                                                                 
+                                                                 rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEILInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SIXS
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SIXS> rdf:type :Class ;
+                                                               
+                                                               rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEILInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SMIS
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SMIS> rdf:type :Class ;
+                                                               
+                                                               rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEILInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEIL
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEIL> rdf:type :Class ;
+                                                                 
+                                                                 :equivalentClass [ rdf:type :Class ;
+                                                                                    :intersectionOf ( <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Facility>
+                                                                                                      [ rdf:type :Restriction ;
+                                                                                                        :onProperty <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#hasInstrument> ;
+                                                                                                        :someValuesFrom <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEILInstrument>
+                                                                                                      ]
+                                                                                                    )
+                                                                                  ] .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEILInstrument
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEILInstrument> rdf:type :Class ;
+                                                                           
+                                                                           rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Instrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SWING
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SWING> rdf:type :Class ;
+                                                                
+                                                                rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEILInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SXD
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SXD> rdf:type :Class ;
+                                                              
+                                                              rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Sandals
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Sandals> rdf:type :Class ;
+                                                                  
+                                                                  rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Sans2d
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Sans2d> rdf:type :Class ;
+                                                                 
+                                                                 rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Surf
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Surf> rdf:type :Class ;
+                                                               
+                                                               rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#TEMPO
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#TEMPO> rdf:type :Class ;
+                                                                
+                                                                rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SOLEILInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Technique
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Technique> rdf:type :Class ;
+                                                                    
+                                                                    rdfs:subClassOf :Thing ,
+                                                                                    [ rdf:type :Restriction ;
+                                                                                      :onProperty <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#isTechniqueOf> ;
+                                                                                      :someValuesFrom <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Instrument>
+                                                                                    ] .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Tosca
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Tosca> rdf:type :Class ;
+                                                                
+                                                                rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Vesuvio
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Vesuvio> rdf:type :Class ;
+                                                                  
+                                                                  rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument> .
+
+
+
+###  http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Wish
+
+<http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Wish> rdf:type :Class ;
+                                                               
+                                                               rdfs:subClassOf <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ISISInstrument> .
+
+
+
+
+
+#################################################################
+#
+#    General axioms
+#
+#################################################################
+
+
+[ rdf:type :AllDisjointClasses ;
+  :members ( <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Crisp>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Engin-X>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Gem>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Hrpd>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Ines>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Inter>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Iris>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Let>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Loq>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Maps>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Mari>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Merlin>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Nimrod>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Offspec>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Osiris>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Pearl>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Polaris>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Polref>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Rotax>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SXD>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Sandals>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Sans2d>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Surf>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Tosca>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Vesuvio>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Wish>
+           )
+] .
+[ rdf:type :AllDisjointClasses ;
+  :members ( <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ANTARES>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#CASSIOPÉE>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#CRISTAL>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#DEIMOS>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#DESIRS>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#DIFFABS>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#DISCO>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#GALAXIES>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#HERMES>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ILES>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#LUCIA>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#MARS>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#MÉTROLOGIE>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#NANOSCOPIUM>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#ODE>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#PLÉIADES>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#PROXIMA_1>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#PROXIMA_2>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#PSICHÉ>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SAMBA>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SEXTANTS>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SIRIUS>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SIXS>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SMIS>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#SWING>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#TEMPO>
+           )
+] .
+[ rdf:type :AllDisjointClasses ;
+  :members ( <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Facility>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Instrument>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Technique>
+           )
+] .
+[ rdf:type :AllDisjointClasses ;
+  :members ( <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Argus>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Emu>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#Hifi>
+             <http://www.semanticweb.org/mol17771/ontologies/stfcOnto#MuSR>
+           )
+] .
+
+
+
+
+###  Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net
+

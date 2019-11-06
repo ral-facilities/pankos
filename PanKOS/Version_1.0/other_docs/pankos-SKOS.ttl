@@ -1,0 +1,3840 @@
+@prefix : <http://www.semanticweb.org/skosOnto#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@base <http://www.semanticweb.org/skosOnto> .
+
+<http://www.semanticweb.org/skosOnto> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+
+skos:altLabel rdf:type owl:AnnotationProperty ;
+              
+              rdfs:subPropertyOf rdfs:label .
+
+
+
+###  http://www.w3.org/2004/02/skos/core#changeNote
+
+skos:changeNote rdf:type owl:AnnotationProperty ;
+                
+                rdfs:subPropertyOf rdfs:label .
+
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+
+skos:definition rdf:type owl:AnnotationProperty ;
+                
+                rdfs:subPropertyOf rdfs:label .
+
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+
+skos:example rdf:type owl:AnnotationProperty ;
+             
+             rdfs:subPropertyOf rdfs:label .
+
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+
+skos:prefLabel rdf:type owl:AnnotationProperty ;
+               
+               rdfs:subPropertyOf rdfs:label .
+
+
+
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/skosOnto#hasInstrument
+
+:hasInstrument rdf:type owl:AsymmetricProperty ,
+                        owl:ObjectProperty ;
+               
+               rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.semanticweb.org/skosOnto#isInstrumentOf
+
+:isInstrumentOf rdf:type owl:AsymmetricProperty ,
+                         owl:ObjectProperty ;
+                
+                owl:inverseOf :hasInstrument ;
+                
+                rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.semanticweb.org/skosOnto#isTechniqueOf
+
+:isTechniqueOf rdf:type owl:AsymmetricProperty ,
+                        owl:ObjectProperty ;
+               
+               owl:inverseOf :usesTechnique ;
+               
+               rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.semanticweb.org/skosOnto#isTypeOf
+
+:isTypeOf rdf:type owl:ObjectProperty ;
+          
+          rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.semanticweb.org/skosOnto#usesTechnique
+
+:usesTechnique rdf:type owl:AsymmetricProperty ,
+                        owl:ObjectProperty ;
+               
+               rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.w3.org/2004/02/skos/core#broader
+
+skos:broader rdf:type owl:ObjectProperty ,
+                      owl:TransitiveProperty ;
+             
+             rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.w3.org/2004/02/skos/core#related
+
+skos:related rdf:type owl:ObjectProperty ,
+                      owl:SymmetricProperty ;
+             
+             rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+
+skos:Concept rdf:type owl:Class .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/skosOnto#ANTARES
+
+:ANTARES rdf:type owl:NamedIndividual ,
+                  skos:Concept ;
+         
+         :isTypeOf :Instrument ;
+         
+         skos:broader :Instrument ;
+         
+         skos:related :SOLEIL .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ARGUS
+
+:ARGUS rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       
+       :isInstrumentOf :ISIS ;
+       
+       :isTypeOf :Instrument ;
+       
+       skos:broader :Instrument ;
+       
+       :usesTechnique :MuonSpectroscopy .
+
+
+
+###  http://www.semanticweb.org/skosOnto#AbsorptionContrastImaging
+
+:AbsorptionContrastImaging rdf:type owl:NamedIndividual ,
+                                    skos:Concept ;
+                           
+                           skos:broader :OtherImaging ;
+                           
+                           :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#AngleResolvedPhotoEmissionSpectroscopy
+
+:AngleResolvedPhotoEmissionSpectroscopy rdf:type owl:NamedIndividual ,
+                                                 skos:Concept ;
+                                        
+                                        skos:altLabel "ARPES"@en ;
+                                        
+                                        skos:broader :OtherLightSpectroscopy ;
+                                        
+                                        :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#B07
+
+:B07 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:altLabel "VERSOX" ,
+                   "Versatile Soft X-ray Beamline" ;
+     
+     :isInstrumentOf :Diamond ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#B16
+
+:B16 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:altLabel "Test Beamline"@en ;
+     
+     :isInstrumentOf :Diamond ;
+     
+     skos:broader :Instrument ;
+     
+     :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#B18
+
+:B18 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:altLabel "Core EXAFS"@en ;
+     
+     :isInstrumentOf :Diamond ;
+     
+     skos:broader :Instrument ;
+     
+     :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#B21
+
+:B21 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:altLabel "High throughput SAXS"@en ;
+     
+     :isInstrumentOf :Diamond ;
+     
+     skos:broader :Instrument ;
+     
+     :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#B22
+
+:B22 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:altLabel "MIRIAM" ,
+                   "Multiband InfraRed Imaging And Microscopy"@en ;
+     
+     :isInstrumentOf :Diamond ;
+     
+     skos:broader :Instrument ;
+     
+     :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#B23
+
+:B23 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:altLabel """B23 Circular dichroism
+"""@en ;
+     
+     :isInstrumentOf :Diamond ;
+     
+     skos:broader :Instrument ;
+     
+     :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#B24
+
+:B24 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:altLabel """Cryo-TXM
+"""@en ;
+     
+     :isInstrumentOf :Diamond ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#BM01A
+
+:BM01A rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       
+       skos:related :ESRF ;
+       
+       skos:broader :Instrument ;
+       
+       :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#BM01B
+
+:BM01B rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       
+       skos:related :ESRF ;
+       
+       skos:broader :Instrument ;
+       
+       :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#BM02
+
+:BM02 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ESRF ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#BM05
+
+:BM05 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ESRF ;
+      
+      skos:broader :Instrument ;
+      
+      :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#BM08
+
+:BM08 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ESRF ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#BM14
+
+:BM14 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ESRF ;
+      
+      skos:broader :Instrument ;
+      
+      :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#BM20A
+
+:BM20A rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       
+       skos:related :ESRF ;
+       
+       :isTypeOf :Instrument ;
+       
+       skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#BM20B
+
+:BM20B rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       
+       skos:related :ESRF ;
+       
+       skos:broader :Instrument ;
+       
+       :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#BM23
+
+:BM23 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ESRF ;
+      
+      skos:broader :Instrument ;
+      
+      :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#BM25A
+
+:BM25A rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       
+       skos:related :ESRF ;
+       
+       skos:broader :Instrument ;
+       
+       :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#BM25B
+
+:BM25B rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       
+       skos:related :ESRF ;
+       
+       skos:broader :Instrument ;
+       
+       :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#BM26A
+
+:BM26A rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       
+       skos:related :ESRF ;
+       
+       :isTypeOf :Instrument ;
+       
+       skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#BM26B
+
+:BM26B rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       
+       skos:related :ESRF ;
+       
+       skos:broader :Instrument ;
+       
+       :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#BM28
+
+:BM28 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ESRF ;
+      
+      skos:broader :Instrument ;
+      
+      :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#BM29
+
+:BM29 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ESRF ;
+      
+      skos:broader :Instrument ;
+      
+      :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#BM30A
+
+:BM30A rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       
+       skos:related :ESRF ;
+       
+       :isTypeOf :Instrument ;
+       
+       skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#BM30B
+
+:BM30B rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       
+       skos:related :ESRF ;
+       
+       :isTypeOf :Instrument ;
+       
+       skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#BM32
+
+:BM32 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ESRF ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#BRISP
+
+:BRISP rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       
+       skos:related :ILL ;
+       
+       skos:broader :Instrument ;
+       
+       :isTypeOf :Instrument ;
+       
+       skos:related :TimeOfFlightSANS .
+
+
+
+###  http://www.semanticweb.org/skosOnto#CASSIOPEE
+
+:CASSIOPEE rdf:type owl:NamedIndividual ,
+                    skos:Concept ;
+           
+           skos:broader :Instrument ;
+           
+           :isTypeOf :Instrument ;
+           
+           skos:related :SOLEIL .
+
+
+
+###  http://www.semanticweb.org/skosOnto#CRISP
+
+:CRISP rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       
+       :isInstrumentOf :ISIS ;
+       
+       :isTypeOf :Instrument ;
+       
+       skos:broader :Instrument ;
+       
+       :usesTechnique :NeutronReflectometry ,
+                      :PolarisedNeutronReflectivity .
+
+
+
+###  http://www.semanticweb.org/skosOnto#CRISTAL
+
+:CRISTAL rdf:type owl:NamedIndividual ,
+                  skos:Concept ;
+         
+         :isTypeOf :Instrument ;
+         
+         skos:broader :Instrument ;
+         
+         skos:related :SOLEIL .
+
+
+
+###  http://www.semanticweb.org/skosOnto#CYCLOPS
+
+:CYCLOPS rdf:type owl:NamedIndividual ,
+                  skos:Concept ;
+         
+         skos:related :ILL ;
+         
+         skos:broader :Instrument ;
+         
+         :isTypeOf :Instrument ;
+         
+         skos:related :SingleCrystalDiffraction .
+
+
+
+###  http://www.semanticweb.org/skosOnto#CoherentDiffractionImaging
+
+:CoherentDiffractionImaging rdf:type owl:NamedIndividual ,
+                                     skos:Concept ;
+                            
+                            skos:broader :OtherDiffraction ;
+                            
+                            :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#CryoDEM
+
+:CryoDEM rdf:type owl:NamedIndividual ,
+                  skos:Concept ;
+         
+         skos:related :ILL ;
+         
+         skos:broader :Instrument ;
+         
+         :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#D1
+
+:D1 rdf:type owl:NamedIndividual ,
+             skos:Concept ;
+    
+    skos:related :ILL ;
+    
+    skos:broader :Instrument ;
+    
+    :isTypeOf :Instrument ;
+    
+    skos:related :PowderDiffraction .
+
+
+
+###  http://www.semanticweb.org/skosOnto#D10
+
+:D10 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:related :ILL ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:broader :Instrument ;
+     
+     skos:related :SingleCrystalDiffraction .
+
+
+
+###  http://www.semanticweb.org/skosOnto#D11
+
+:D11 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:related :ILL ;
+     
+     skos:broader :Instrument ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:related :PowderDiffraction ,
+                  :SmallAngleNeutronScattering .
+
+
+
+###  http://www.semanticweb.org/skosOnto#D16
+
+:D16 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:related :ILL ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#D17
+
+:D17 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:related :ILL ;
+     
+     skos:broader :Instrument ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:related :NeutronReflectometry .
+
+
+
+###  http://www.semanticweb.org/skosOnto#D19
+
+:D19 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:related :ILL ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:broader :Instrument ;
+     
+     skos:related :SingleCrystalDiffraction .
+
+
+
+###  http://www.semanticweb.org/skosOnto#D20
+
+:D20 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:related :ILL ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:broader :Instrument ;
+     
+     skos:related :PowderDiffraction .
+
+
+
+###  http://www.semanticweb.org/skosOnto#D22
+
+:D22 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:related :ILL ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:broader :Instrument ;
+     
+     skos:related :SmallAngleNeutronScattering .
+
+
+
+###  http://www.semanticweb.org/skosOnto#D23
+
+:D23 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:related :ILL ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:broader :Instrument ;
+     
+     skos:related :SingleCrystalDiffraction .
+
+
+
+###  http://www.semanticweb.org/skosOnto#D2B
+
+:D2B rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:related :ILL ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:broader :Instrument ;
+     
+     skos:related :PowderDiffraction .
+
+
+
+###  http://www.semanticweb.org/skosOnto#D33
+
+:D33 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:related :ILL ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:broader :Instrument ;
+     
+     skos:related :SmallAngleNeutronScattering .
+
+
+
+###  http://www.semanticweb.org/skosOnto#D4
+
+:D4 rdf:type owl:NamedIndividual ,
+             skos:Concept ;
+    
+    skos:related :ILL ;
+    
+    :isTypeOf :Instrument ;
+    
+    skos:broader :Instrument ;
+    
+    skos:related :PowderDiffraction .
+
+
+
+###  http://www.semanticweb.org/skosOnto#D7
+
+:D7 rdf:type owl:NamedIndividual ,
+             skos:Concept ;
+    
+    skos:related :ILL ;
+    
+    :isTypeOf :Instrument ;
+    
+    skos:broader :Instrument ;
+    
+    skos:related :TimeOfFlightSANS .
+
+
+
+###  http://www.semanticweb.org/skosOnto#D9
+
+:D9 rdf:type owl:NamedIndividual ,
+             skos:Concept ;
+    
+    skos:related :ILL ;
+    
+    skos:broader :Instrument ;
+    
+    :isTypeOf :Instrument ;
+    
+    skos:related :SingleCrystalDiffraction .
+
+
+
+###  http://www.semanticweb.org/skosOnto#DEIMOS
+
+:DEIMOS rdf:type owl:NamedIndividual ,
+                 skos:Concept ;
+        
+        :isTypeOf :Instrument ;
+        
+        skos:broader :Instrument ;
+        
+        skos:related :SOLEIL .
+
+
+
+###  http://www.semanticweb.org/skosOnto#DESIRS
+
+:DESIRS rdf:type owl:NamedIndividual ,
+                 skos:Concept ;
+        
+        :isTypeOf :Instrument ;
+        
+        skos:broader :Instrument ;
+        
+        skos:related :SOLEIL .
+
+
+
+###  http://www.semanticweb.org/skosOnto#DIFFABS
+
+:DIFFABS rdf:type owl:NamedIndividual ,
+                  skos:Concept ;
+         
+         :isTypeOf :Instrument ;
+         
+         skos:broader :Instrument ;
+         
+         skos:related :SOLEIL .
+
+
+
+###  http://www.semanticweb.org/skosOnto#DISCO
+
+:DISCO rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       
+       skos:broader :Instrument ;
+       
+       :isTypeOf :Instrument ;
+       
+       skos:related :SOLEIL .
+
+
+
+###  http://www.semanticweb.org/skosOnto#Diamond
+
+:Diamond rdf:type owl:NamedIndividual ,
+                  skos:Concept ;
+         
+         :hasInstrument :B07 ,
+                        :B16 ,
+                        :B18 ,
+                        :B21 ,
+                        :B22 ,
+                        :B23 ,
+                        :B24 ;
+         
+         :isTypeOf :Facility ;
+         
+         skos:broader :Facility ;
+         
+         :hasInstrument :I02 ,
+                        :I03 ,
+                        :I04 ,
+                        :I04-1 ,
+                        :I05 ,
+                        :I06 ,
+                        :I07 ,
+                        :I08 ,
+                        :I09 ,
+                        :I10 ,
+                        :I11 ,
+                        :I12 ,
+                        :I13L ,
+                        :I14 ,
+                        :I15 ,
+                        :I15-1 ,
+                        :I16 ,
+                        :I18 ,
+                        :I19 ,
+                        :I20 ,
+                        :I21 ,
+                        :I22 ,
+                        :I23 ,
+                        :I24 .
+
+
+
+###  http://www.semanticweb.org/skosOnto#Dichroism
+
+:Dichroism rdf:type owl:NamedIndividual ,
+                    skos:Concept ;
+           
+           :isTypeOf :Technique ;
+           
+           skos:broader :X-RaySpectroscopy .
+
+
+
+###  http://www.semanticweb.org/skosOnto#Diffraction
+
+:Diffraction rdf:type owl:NamedIndividual ,
+                      skos:Concept ;
+             
+             :isTypeOf :Technique ;
+             
+             skos:broader :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#DiffractionImaging
+
+:DiffractionImaging rdf:type owl:NamedIndividual ,
+                             skos:Concept ;
+                    
+                    skos:broader :OtherDiffraction ;
+                    
+                    :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#DiffuseX-RaySAXS
+
+:DiffuseX-RaySAXS rdf:type owl:NamedIndividual ,
+                           skos:Concept ;
+                  
+                  :isTypeOf :Technique ;
+                  
+                  skos:broader :X-RaySAXS .
+
+
+
+###  http://www.semanticweb.org/skosOnto#EMU
+
+:EMU rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     :isInstrumentOf :ISIS ;
+     
+     skos:broader :Instrument ;
+     
+     :isTypeOf :Instrument ;
+     
+     :usesTechnique :MuonSpectroscopy .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ENGIN-X
+
+:ENGIN-X rdf:type owl:NamedIndividual ,
+                  skos:Concept ;
+         
+         :isInstrumentOf :ISIS ;
+         
+         :isTypeOf :Instrument ;
+         
+         skos:broader :Instrument ;
+         
+         :usesTechnique :NeutronDiffraction .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ESRF
+
+:ESRF rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:broader :Facility ;
+      
+      :isTypeOf :Facility .
+
+
+
+###  http://www.semanticweb.org/skosOnto#EmmissionX-RaySpectroscopy
+
+:EmmissionX-RaySpectroscopy rdf:type owl:NamedIndividual ,
+                                     skos:Concept ;
+                            
+                            :isTypeOf :Technique ;
+                            
+                            skos:broader :X-RaySpectroscopy .
+
+
+
+###  http://www.semanticweb.org/skosOnto#EnhancedDiffractionImaging
+
+:EnhancedDiffractionImaging rdf:type owl:NamedIndividual ,
+                                     skos:Concept ;
+                            
+                            skos:broader :OtherDiffraction ;
+                            
+                            :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#FIGARO
+
+:FIGARO rdf:type owl:NamedIndividual ,
+                 skos:Concept ;
+        
+        skos:related :ILL ;
+        
+        skos:broader :Instrument ;
+        
+        :isTypeOf :Instrument ;
+        
+        skos:related :NeutronReflectometry .
+
+
+
+###  http://www.semanticweb.org/skosOnto#Facility
+
+:Facility rdf:type owl:NamedIndividual ,
+                   skos:Concept ;
+          
+          skos:related :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#FluorescenceLuminescence
+
+:FluorescenceLuminescence rdf:type owl:NamedIndividual ,
+                                   skos:Concept ;
+                          
+                          skos:broader :Luminescence ;
+                          
+                          :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#FluorescenceSpectroscopy
+
+:FluorescenceSpectroscopy rdf:type owl:NamedIndividual ,
+                                   skos:Concept ;
+                          
+                          skos:broader :FluorescenceLuminescence ;
+                          
+                          :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#FluorescenceTomography
+
+:FluorescenceTomography rdf:type owl:NamedIndividual ,
+                                 skos:Concept ;
+                        
+                        :isTypeOf :Technique ;
+                        
+                        skos:broader :Tomography .
+
+
+
+###  http://www.semanticweb.org/skosOnto#GALAXIES
+
+:GALAXIES rdf:type owl:NamedIndividual ,
+                   skos:Concept ;
+          
+          skos:broader :Instrument ;
+          
+          :isTypeOf :Instrument ;
+          
+          skos:related :SOLEIL .
+
+
+
+###  http://www.semanticweb.org/skosOnto#GEM
+
+:GEM rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:prefLabel "GEM"@en ;
+     
+     skos:altLabel "Gem"@en ,
+                   "gem"@en ;
+     
+     :isInstrumentOf :ISIS ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:broader :Instrument ;
+     
+     :usesTechnique :NeutronDiffraction .
+
+
+
+###  http://www.semanticweb.org/skosOnto#GRANT
+
+:GRANT rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       
+       skos:related :ILL ;
+       
+       skos:broader :Instrument ;
+       
+       :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#GammaSpectroscopy
+
+:GammaSpectroscopy rdf:type owl:NamedIndividual ,
+                            skos:Concept ;
+                   
+                   skos:broader :Spectroscopy ;
+                   
+                   :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#GrazingIncidenceDiffraction
+
+:GrazingIncidenceDiffraction rdf:type owl:NamedIndividual ,
+                                      skos:Concept ;
+                             
+                             :isTypeOf :Technique ;
+                             
+                             skos:broader :X-RayDiffraction .
+
+
+
+###  http://www.semanticweb.org/skosOnto#GrazingIncidentSANS
+
+:GrazingIncidentSANS rdf:type owl:NamedIndividual ,
+                              skos:Concept ;
+                     
+                     skos:broader :SmallAngleNeutronScattering ;
+                     
+                     :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#GrazingIncidentX-RaySAXS
+
+:GrazingIncidentX-RaySAXS rdf:type owl:NamedIndividual ,
+                                   skos:Concept ;
+                          
+                          :isTypeOf :Technique ;
+                          
+                          skos:broader :X-RaySAXS .
+
+
+
+###  http://www.semanticweb.org/skosOnto#HERMES
+
+:HERMES rdf:type owl:NamedIndividual ,
+                 skos:Concept ;
+        
+        :isTypeOf :Instrument ;
+        
+        skos:broader :Instrument ;
+        
+        skos:related :SOLEIL .
+
+
+
+###  http://www.semanticweb.org/skosOnto#HIFI
+
+:HIFI rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      :isInstrumentOf :ISIS ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:broader :Instrument ;
+      
+      :usesTechnique :MuonSpectroscopy .
+
+
+
+###  http://www.semanticweb.org/skosOnto#HRPD
+
+:HRPD rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      :isInstrumentOf :ISIS ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:broader :Instrument ;
+      
+      :usesTechnique :NeutronDiffraction .
+
+
+
+###  http://www.semanticweb.org/skosOnto#HardX-RayPhotoelectron
+
+:HardX-RayPhotoelectron rdf:type owl:NamedIndividual ,
+                                 skos:Concept ;
+                        
+                        :isTypeOf :Technique ;
+                        
+                        skos:broader :X-RaySpectroscopy .
+
+
+
+###  http://www.semanticweb.org/skosOnto#HighResolutionPhotoElectronSpectroscopy
+
+:HighResolutionPhotoElectronSpectroscopy rdf:type owl:NamedIndividual ,
+                                                  skos:Concept ;
+                                         
+                                         skos:broader :OtherLightSpectroscopy ;
+                                         
+                                         :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#Holography
+
+:Holography rdf:type owl:NamedIndividual ,
+                     skos:Concept ;
+            
+            skos:broader :Imaging ;
+            
+            :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#I02
+
+:I02 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:altLabel "Macromolecular Crystallography"@en ;
+     
+     :isInstrumentOf :Diamond ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#I03
+
+:I03 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:altLabel "Macromolecular Crystallography" ;
+     
+     :isInstrumentOf :Diamond ;
+     
+     skos:broader :Instrument ;
+     
+     :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#I04
+
+:I04 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:altLabel "Macromolecular Crystallography "@en ;
+     
+     :isInstrumentOf :Diamond ;
+     
+     skos:broader :Instrument ;
+     
+     :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#I04-1
+
+:I04-1 rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       
+       skos:altLabel "Monochromatic MX"@en ;
+       
+       :isInstrumentOf :Diamond ;
+       
+       :isTypeOf :Instrument ;
+       
+       skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#I05
+
+:I05 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:altLabel "ARPES"@en ;
+     
+     :usesTechnique :AngleResolvedPhotoEmissionSpectroscopy ;
+     
+     :isInstrumentOf :Diamond ;
+     
+     skos:broader :Instrument ;
+     
+     :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#I06
+
+:I06 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:altLabel "Nanoscience"@en ;
+     
+     :isInstrumentOf :Diamond ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#I07
+
+:I07 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:changeNote """
+"""@en ;
+     
+     skos:altLabel "I07 Surface and Interface Diffraction"@en ;
+     
+     :isInstrumentOf :Diamond ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#I08
+
+:I08 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:altLabel "I08 Soft X-ray Microscopy"@en ;
+     
+     :isInstrumentOf :Diamond ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#I09
+
+:I09 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:altLabel "I09 Surface and Interface Structural Analysis"@en ;
+     
+     :isInstrumentOf :Diamond ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#I10
+
+:I10 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:altLabel """BLADE
+"""@en ,
+                   """I10 Beamline for Advanced Dichroism Experiments
+"""@en ;
+     
+     :isInstrumentOf :Diamond ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#I11
+
+:I11 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:altLabel "I11 High Resolution Powder Diffraction"@en ;
+     
+     :isInstrumentOf :Diamond ;
+     
+     skos:broader :Instrument ;
+     
+     :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#I12
+
+:I12 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:altLabel "I12 JEEP"@en ,
+                   "I12 JEEP: Joint Engineering, Environmental and Processing"@en ;
+     
+     :isInstrumentOf :Diamond ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#I13L
+
+:I13L rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:altLabel "I13L X-Ray Imaging and Coherence"@en ;
+      
+      :isInstrumentOf :Diamond ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#I14
+
+:I14 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:altLabel "I14 A Hard X-ray Nanoprobe for Complex System"@en ;
+     
+     :isInstrumentOf :Diamond ;
+     
+     skos:broader :Instrument ;
+     
+     :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#I15
+
+:I15 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:altLabel " I15 Extreme Conditions "@en ;
+     
+     :isInstrumentOf :Diamond ;
+     
+     skos:broader :Instrument ;
+     
+     :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#I15-1
+
+:I15-1 rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       
+       :isInstrumentOf :Diamond ;
+       
+       skos:broader :Instrument ;
+       
+       :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#I16
+
+:I16 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     :isInstrumentOf :Diamond ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#I18
+
+:I18 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:altLabel "I18 Microfocus Spectroscopy"@en ;
+     
+     :isInstrumentOf :Diamond ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#I19
+
+:I19 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:altLabel "I19 Small Molecule Single Crystal Diffraction"@en ;
+     
+     :isInstrumentOf :Diamond ;
+     
+     skos:broader :Instrument ;
+     
+     :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#I20
+
+:I20 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:altLabel "I20 LOLA"@en ,
+                   "I20 LOLA: X-ray spectroscopy"@en ;
+     
+     :isInstrumentOf :Diamond ;
+     
+     skos:broader :Instrument ;
+     
+     :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#I21
+
+:I21 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:altLabel "I21 Inelastic X-ray Scattering"@en ,
+                   "IXS"@en ;
+     
+     :isInstrumentOf :Diamond ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#I22
+
+:I22 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:altLabel "I22 Non-crystalline diffraction"@en ;
+     
+     :isInstrumentOf :Diamond ;
+     
+     skos:broader :Instrument ;
+     
+     :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#I23
+
+:I23 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:altLabel "I23 Long Wavelength MX"@en ;
+     
+     :isInstrumentOf :Diamond ;
+     
+     skos:broader :Instrument ;
+     
+     :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#I24
+
+:I24 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:altLabel "I24 Microfocus MX"@en ;
+     
+     :isInstrumentOf :Diamond ;
+     
+     skos:broader :Instrument ;
+     
+     :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ID01
+
+:ID01 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ESRF ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:broader :Instrument ;
+      
+      skos:related :X-RayDiffraction .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ID02
+
+:ID02 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ESRF ;
+      
+      skos:broader :Instrument ;
+      
+      :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ID03
+
+:ID03 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ESRF ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ID08
+
+:ID08 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ESRF ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ID09A
+
+:ID09A rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       
+       skos:related :ESRF ;
+       
+       skos:broader :Instrument ;
+       
+       :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ID09B
+
+:ID09B rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       
+       skos:related :ESRF ;
+       
+       skos:broader :Instrument ;
+       
+       :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ID10
+
+:ID10 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ESRF ;
+      
+      skos:broader :Instrument ;
+      
+      :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ID11
+
+:ID11 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ESRF ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ID12
+
+:ID12 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ESRF ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ID13
+
+:ID13 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ESRF ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ID14-1
+
+:ID14-1 rdf:type owl:NamedIndividual ,
+                 skos:Concept ;
+        
+        skos:related :ESRF ;
+        
+        :isTypeOf :Instrument ;
+        
+        skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ID14-2
+
+:ID14-2 rdf:type owl:NamedIndividual ,
+                 skos:Concept ;
+        
+        skos:related :ESRF ;
+        
+        skos:broader :Instrument ;
+        
+        :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ID14-4
+
+:ID14-4 rdf:type owl:NamedIndividual ,
+                 skos:Concept ;
+        
+        skos:related :ESRF ;
+        
+        skos:broader :Instrument ;
+        
+        :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ID15A
+
+:ID15A rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       
+       skos:related :ESRF ;
+       
+       :isTypeOf :Instrument ;
+       
+       skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ID15B
+
+:ID15B rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       
+       skos:related :ESRF ;
+       
+       skos:broader :Instrument ;
+       
+       :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ID16
+
+:ID16 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ESRF ;
+      
+      skos:broader :Instrument ;
+      
+      :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ID17
+
+:ID17 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ESRF ;
+      
+      skos:broader :Instrument ;
+      
+      :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ID18
+
+:ID18 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ESRF ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ID19
+
+:ID19 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ESRF ;
+      
+      skos:broader :Instrument ;
+      
+      :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ID21
+
+:ID21 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ESRF ;
+      
+      skos:broader :Instrument ;
+      
+      :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ID22EH1
+
+:ID22EH1 rdf:type owl:NamedIndividual ,
+                  skos:Concept ;
+         
+         skos:related :ESRF ;
+         
+         skos:broader :Instrument ;
+         
+         :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ID22NI
+
+:ID22NI rdf:type owl:NamedIndividual ,
+                 skos:Concept ;
+        
+        skos:related :ESRF ;
+        
+        :isTypeOf :Instrument ;
+        
+        skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ID23-1
+
+:ID23-1 rdf:type owl:NamedIndividual ,
+                 skos:Concept ;
+        
+        skos:related :ESRF ;
+        
+        :isTypeOf :Instrument ;
+        
+        skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ID23-2
+
+:ID23-2 rdf:type owl:NamedIndividual ,
+                 skos:Concept ;
+        
+        skos:related :ESRF ;
+        
+        skos:broader :Instrument ;
+        
+        :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ID24
+
+:ID24 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ESRF ;
+      
+      skos:broader :Instrument ;
+      
+      :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ID26
+
+:ID26 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ESRF ;
+      
+      skos:broader :Instrument ;
+      
+      :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ID27
+
+:ID27 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ESRF ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ID28
+
+:ID28 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ESRF ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ID29
+
+:ID29 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ESRF ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ID31
+
+:ID31 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ESRF ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ILES
+
+:ILES rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:broader :Instrument ;
+      
+      skos:related :SOLEIL .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ILL
+
+:ILL rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:broader :Facility ;
+     
+     :isTypeOf :Facility .
+
+
+
+###  http://www.semanticweb.org/skosOnto#IN1
+
+:IN1 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:related :ILL ;
+     
+     skos:broader :Instrument ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:related :Triple-AxisSpectroscopy .
+
+
+
+###  http://www.semanticweb.org/skosOnto#IN10
+
+:IN10 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ILL ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#IN11
+
+:IN11 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ILL ;
+      
+      skos:broader :Instrument ;
+      
+      :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#IN12
+
+:IN12 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ILL ;
+      
+      skos:broader :Instrument ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:related :Triple-AxisSpectroscopy .
+
+
+
+###  http://www.semanticweb.org/skosOnto#IN13
+
+:IN13 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ILL ;
+      
+      skos:broader :Instrument ;
+      
+      :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#IN14
+
+:IN14 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ILL ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:broader :Instrument ;
+      
+      skos:related :Triple-AxisSpectroscopy .
+
+
+
+###  http://www.semanticweb.org/skosOnto#IN15
+
+:IN15 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ILL ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#IN16
+
+:IN16 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ILL ;
+      
+      skos:broader :Instrument ;
+      
+      :isTypeOf :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#IN20
+
+:IN20 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ILL ;
+      
+      skos:broader :Instrument ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:related :Triple-AxisSpectroscopy .
+
+
+
+###  http://www.semanticweb.org/skosOnto#IN22
+
+:IN22 rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ILL ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:broader :Instrument ;
+      
+      skos:related :Triple-AxisSpectroscopy .
+
+
+
+###  http://www.semanticweb.org/skosOnto#IN3
+
+:IN3 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:altLabel """TEST Instrument
+"""@en ;
+     
+     skos:related :ILL ;
+     
+     skos:broader :Instrument ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:related :Triple-AxisSpectroscopy .
+
+
+
+###  http://www.semanticweb.org/skosOnto#IN4C
+
+:IN4C rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ILL ;
+      
+      skos:broader :Instrument ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:related :TimeOfFlightSANS .
+
+
+
+###  http://www.semanticweb.org/skosOnto#IN5
+
+:IN5 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:related :ILL ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:broader :Instrument ;
+     
+     skos:related :TimeOfFlightSANS .
+
+
+
+###  http://www.semanticweb.org/skosOnto#IN6
+
+:IN6 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:related :ILL ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:broader :Instrument ;
+     
+     skos:related :TimeOfFlightSANS .
+
+
+
+###  http://www.semanticweb.org/skosOnto#IN8
+
+:IN8 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:related :ILL ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:broader :Instrument ;
+     
+     skos:related :Triple-AxisSpectroscopy .
+
+
+
+###  http://www.semanticweb.org/skosOnto#INES
+
+:INES rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      :isInstrumentOf :ISIS ;
+      
+      skos:broader :Instrument ;
+      
+      :isTypeOf :Instrument ;
+      
+      :usesTechnique :NeutronDiffraction ,
+                     :PowderDiffraction .
+
+
+
+###  http://www.semanticweb.org/skosOnto#INTER
+
+:INTER rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       
+       :isInstrumentOf :ISIS ;
+       
+       skos:broader :Instrument ;
+       
+       :isTypeOf :Instrument ;
+       
+       :usesTechnique :NeutronReflectometry .
+
+
+
+###  http://www.semanticweb.org/skosOnto#IRIS
+
+:IRIS rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ISIS ;
+      
+      :isInstrumentOf :ISIS ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:broader :Instrument ;
+      
+      :usesTechnique :NeutronSpectroscopy ;
+      
+      skos:related :NeutronSpectroscopy .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ISIS
+
+:ISIS rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      :hasInstrument :ARGUS ,
+                     :CRISP ,
+                     :EMU ,
+                     :ENGIN-X ;
+      
+      skos:broader :Facility ;
+      
+      :isTypeOf :Facility ;
+      
+      :hasInstrument :GEM ,
+                     :HIFI ,
+                     :HRPD ,
+                     :INES ,
+                     :INTER ,
+                     :IRIS ,
+                     :LET ,
+                     :LOQ ,
+                     :MAPS ,
+                     :MARI ,
+                     :MERLIN ,
+                     :MuSR ,
+                     :NIMROD ,
+                     :OFFSPEC ,
+                     :OSIRIS ,
+                     :PEARL ,
+                     :POLARIS ,
+                     :POLREF ,
+                     :ROTAX ,
+                     :SANDALS ,
+                     :SANS2D ,
+                     :SURF ,
+                     :SXD ,
+                     :TOSCA ,
+                     :VESUVIO ,
+                     :WISH .
+
+
+
+###  http://www.semanticweb.org/skosOnto#Imaging
+
+:Imaging rdf:type owl:NamedIndividual ,
+                  skos:Concept ;
+         
+         skos:broader :Technique ;
+         
+         :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#InelasticNeutronScattingSpectroscopy
+
+:InelasticNeutronScattingSpectroscopy rdf:type owl:NamedIndividual ,
+                                               skos:Concept ;
+                                      
+                                      skos:broader :NeutronSpectroscopy ;
+                                      
+                                      :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#InelasticX-RaySAXS
+
+:InelasticX-RaySAXS rdf:type owl:NamedIndividual ,
+                             skos:Concept ;
+                    
+                    :isTypeOf :Technique ;
+                    
+                    skos:broader :X-RaySAXS .
+
+
+
+###  http://www.semanticweb.org/skosOnto#InfraredMicroSpectroscopy
+
+:InfraredMicroSpectroscopy rdf:type owl:NamedIndividual ,
+                                    skos:Concept ;
+                           
+                           skos:broader :OtherLightSpectroscopy ;
+                           
+                           :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#Instrument
+
+:Instrument rdf:type owl:NamedIndividual ,
+                     skos:Concept ;
+            
+            skos:related :Facility ;
+            
+            :isTypeOf :Instrument ;
+            
+            skos:related :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#LADI-III
+
+:LADI-III rdf:type owl:NamedIndividual ,
+                   skos:Concept ;
+          
+          skos:related :ILL ;
+          
+          :isTypeOf :Instrument ;
+          
+          skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#LET
+
+:LET rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     :isInstrumentOf :ISIS ;
+     
+     skos:broader :Instrument ;
+     
+     :isTypeOf :Instrument ;
+     
+     :usesTechnique :NeutronSpectroscopy .
+
+
+
+###  http://www.semanticweb.org/skosOnto#LOQ
+
+:LOQ rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     :isInstrumentOf :ISIS ;
+     
+     skos:broader :Instrument ;
+     
+     :isTypeOf :Instrument ;
+     
+     :usesTechnique :SmallAngleNeutronScattering .
+
+
+
+###  http://www.semanticweb.org/skosOnto#LUCIA
+
+:LUCIA rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       
+       :isTypeOf :Instrument ;
+       
+       skos:broader :Instrument ;
+       
+       skos:related :SOLEIL .
+
+
+
+###  http://www.semanticweb.org/skosOnto#Luminescence
+
+:Luminescence rdf:type owl:NamedIndividual ,
+                       skos:Concept ;
+              
+              :isTypeOf :Technique ;
+              
+              skos:broader :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#MAPS
+
+:MAPS rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      :isInstrumentOf :ISIS ;
+      
+      skos:broader :Instrument ;
+      
+      :isTypeOf :Instrument ;
+      
+      :usesTechnique :NeutronSpectroscopy .
+
+
+
+###  http://www.semanticweb.org/skosOnto#MARI
+
+:MARI rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      :isInstrumentOf :ISIS ;
+      
+      skos:broader :Instrument ;
+      
+      :isTypeOf :Instrument ;
+      
+      :usesTechnique :NeutronSpectroscopy .
+
+
+
+###  http://www.semanticweb.org/skosOnto#MARS
+
+:MARS rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:broader :Instrument ;
+      
+      skos:related :SOLEIL .
+
+
+
+###  http://www.semanticweb.org/skosOnto#MERLIN
+
+:MERLIN rdf:type owl:NamedIndividual ,
+                 skos:Concept ;
+        
+        :isInstrumentOf :ISIS ;
+        
+        :isTypeOf :Instrument ;
+        
+        skos:broader :Instrument ;
+        
+        :usesTechnique :NeutronSpectroscopy .
+
+
+
+###  http://www.semanticweb.org/skosOnto#MassSeparatorSpectrometer
+
+:MassSeparatorSpectrometer rdf:type owl:NamedIndividual ,
+                                    skos:Concept ;
+                           
+                           skos:broader :NeutronSpectroscopy ;
+                           
+                           :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#MicroGISAXSTomography
+
+:MicroGISAXSTomography rdf:type owl:NamedIndividual ,
+                                skos:Concept ;
+                       
+                       skos:altLabel "Microbeam Grazing Incidence Small Angle X-Ray Scattering"@en ;
+                       
+                       :isTypeOf :Technique ;
+                       
+                       skos:broader :X-RayImaging .
+
+
+
+###  http://www.semanticweb.org/skosOnto#MicroSAXSTomography
+
+:MicroSAXSTomography rdf:type owl:NamedIndividual ,
+                              skos:Concept ;
+                     
+                     skos:altLabel "Microbeam Small Angle X-Ray Scattering"@en ;
+                     
+                     :isTypeOf :Technique ;
+                     
+                     skos:broader :X-RayImaging .
+
+
+
+###  http://www.semanticweb.org/skosOnto#MicroX-RayFluorescence
+
+:MicroX-RayFluorescence rdf:type owl:NamedIndividual ,
+                                 skos:Concept ;
+                        
+                        skos:altLabel "Micro XRF"@en ;
+                        
+                        skos:broader :FluorescenceLuminescence ;
+                        
+                        :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#Microscopy
+
+:Microscopy rdf:type owl:NamedIndividual ,
+                     skos:Concept ;
+            
+            skos:broader :Imaging ;
+            
+            :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#MuSR
+
+:MuSR rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      :isInstrumentOf :ISIS ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:broader :Instrument ;
+      
+      :usesTechnique :MuonSpectroscopy .
+
+
+
+###  http://www.semanticweb.org/skosOnto#MuonSpectroscopy
+
+:MuonSpectroscopy rdf:type owl:NamedIndividual ,
+                           skos:Concept ;
+                  
+                  :isTechniqueOf :ARGUS ,
+                                 :EMU ,
+                                 :HIFI ,
+                                 :MuSR ;
+                  
+                  skos:broader :Spectroscopy ;
+                  
+                  :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#MÉTROLOGIE
+
+:MÉTROLOGIE rdf:type owl:NamedIndividual ,
+                     skos:Concept ;
+            
+            skos:broader :Instrument ;
+            
+            :isTypeOf :Instrument ;
+            
+            skos:related :SOLEIL .
+
+
+
+###  http://www.semanticweb.org/skosOnto#NANOSCOPIUM
+
+:NANOSCOPIUM rdf:type owl:NamedIndividual ,
+                      skos:Concept ;
+             
+             :isTypeOf :Instrument ;
+             
+             skos:broader :Instrument ;
+             
+             skos:related :SOLEIL .
+
+
+
+###  http://www.semanticweb.org/skosOnto#NIMROD
+
+:NIMROD rdf:type owl:NamedIndividual ,
+                 skos:Concept ;
+        
+        :isInstrumentOf :ISIS ;
+        
+        :isTypeOf :Instrument ;
+        
+        skos:broader :Instrument ;
+        
+        :usesTechnique :NeutronDiffraction ,
+                       :SmallAngleNeutronScattering .
+
+
+
+###  http://www.semanticweb.org/skosOnto#NeutronDiffraction
+
+:NeutronDiffraction rdf:type owl:NamedIndividual ,
+                             skos:Concept ;
+                    
+                    skos:altLabel "Elastic Neutron Scattering"@en ;
+                    
+                    skos:broader :Diffraction ;
+                    
+                    :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#NeutronReflectometry
+
+:NeutronReflectometry rdf:type owl:NamedIndividual ,
+                               skos:Concept ;
+                      
+                      skos:broader :Reflectometry ;
+                      
+                      :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#NeutronSpectroscopy
+
+:NeutronSpectroscopy rdf:type owl:NamedIndividual ,
+                              skos:Concept ;
+                     
+                     skos:broader :Spectroscopy ;
+                     
+                     :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ODE
+
+:ODE rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:broader :Instrument ;
+     
+     skos:related :SOLEIL .
+
+
+
+###  http://www.semanticweb.org/skosOnto#OFFSPEC
+
+:OFFSPEC rdf:type owl:NamedIndividual ,
+                  skos:Concept ;
+         
+         :isInstrumentOf :ISIS ;
+         
+         skos:broader :Instrument ;
+         
+         :isTypeOf :Instrument ;
+         
+         :usesTechnique :Reflectometry ,
+                        :Spin-EchoResolvedGrazingIncidenceScattering ,
+                        :Spin-EchoSmallAngleNeutronScattering .
+
+
+
+###  http://www.semanticweb.org/skosOnto#OSIRIS
+
+:OSIRIS rdf:type owl:NamedIndividual ,
+                 skos:Concept ;
+        
+        :isInstrumentOf :ISIS ;
+        
+        :isTypeOf :Instrument ;
+        
+        skos:broader :Instrument ;
+        
+        :usesTechnique :NeutronDiffraction ,
+                       :NeutronSpectroscopy .
+
+
+
+###  http://www.semanticweb.org/skosOnto#OpticaLSpectroscopy
+
+:OpticaLSpectroscopy rdf:type owl:NamedIndividual ,
+                              skos:Concept ;
+                     
+                     skos:broader :OtherLightSpectroscopy ;
+                     
+                     :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#OrientExpress
+
+:OrientExpress rdf:type owl:NamedIndividual ,
+                        skos:Concept ;
+               
+               skos:related :ILL ;
+               
+               skos:broader :Instrument ;
+               
+               :isTypeOf :Instrument ;
+               
+               skos:related :SingleCrystalDiffraction .
+
+
+
+###  http://www.semanticweb.org/skosOnto#OtherDiffraction
+
+:OtherDiffraction rdf:type owl:NamedIndividual ,
+                           skos:Concept ;
+                  
+                  skos:broader :Diffraction .
+
+
+
+###  http://www.semanticweb.org/skosOnto#OtherImaging
+
+:OtherImaging rdf:type owl:NamedIndividual ,
+                       skos:Concept ;
+              
+              skos:broader :Imaging .
+
+
+
+###  http://www.semanticweb.org/skosOnto#OtherLightSpectroscopy
+
+:OtherLightSpectroscopy rdf:type owl:NamedIndividual ,
+                                 skos:Concept ;
+                        
+                        skos:broader :Spectroscopy .
+
+
+
+###  http://www.semanticweb.org/skosOnto#PEARL
+
+:PEARL rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       
+       :isInstrumentOf :ISIS ;
+       
+       :isTypeOf :Instrument ;
+       
+       skos:broader :Instrument ;
+       
+       :usesTechnique :NeutronDiffraction .
+
+
+
+###  http://www.semanticweb.org/skosOnto#PF1B
+
+:PF1B rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:related :ILL ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#PF2
+
+:PF2 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:related :ILL ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#PLEIADES
+
+:PLEIADES rdf:type owl:NamedIndividual ,
+                   skos:Concept ;
+          
+          skos:broader :Instrument ;
+          
+          :isTypeOf :Instrument ;
+          
+          skos:related :SOLEIL .
+
+
+
+###  http://www.semanticweb.org/skosOnto#PN1
+
+:PN1 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:related :ILL ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#PN3
+
+:PN3 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:related :ILL ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#POLARIS
+
+:POLARIS rdf:type owl:NamedIndividual ,
+                  skos:Concept ;
+         
+         skos:related :ISIS ;
+         
+         :isInstrumentOf :ISIS ;
+         
+         skos:broader :Instrument ;
+         
+         :isTypeOf :Instrument ;
+         
+         skos:related :NeutronDiffraction ;
+         
+         :usesTechnique :NeutronDiffraction ,
+                        :PowderDiffraction .
+
+
+
+###  http://www.semanticweb.org/skosOnto#POLREF
+
+:POLREF rdf:type owl:NamedIndividual ,
+                 skos:Concept ;
+        
+        :isInstrumentOf :ISIS ;
+        
+        :isTypeOf :Instrument ;
+        
+        skos:broader :Instrument ;
+        
+        :usesTechnique :PolarisedNeutronReflectivity .
+
+
+
+###  http://www.semanticweb.org/skosOnto#PROXIMA1
+
+:PROXIMA1 rdf:type owl:NamedIndividual ,
+                   skos:Concept ;
+          
+          skos:broader :Instrument ;
+          
+          :isTypeOf :Instrument ;
+          
+          skos:related :SOLEIL .
+
+
+
+###  http://www.semanticweb.org/skosOnto#PROXIMA2
+
+:PROXIMA2 rdf:type owl:NamedIndividual ,
+                   skos:Concept ;
+          
+          skos:broader :Instrument ;
+          
+          :isTypeOf :Instrument ;
+          
+          skos:related :SOLEIL .
+
+
+
+###  http://www.semanticweb.org/skosOnto#PSICHÉ
+
+:PSICHÉ rdf:type owl:NamedIndividual ,
+                 skos:Concept ;
+        
+        skos:broader :Instrument ;
+        
+        :isTypeOf :Instrument ;
+        
+        skos:related :SOLEIL .
+
+
+
+###  http://www.semanticweb.org/skosOnto#PhaseContrastImaging
+
+:PhaseContrastImaging rdf:type owl:NamedIndividual ,
+                               skos:Concept ;
+                      
+                      skos:broader :OtherImaging ;
+                      
+                      :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#PhotoemissionElectronMicroscopy
+
+:PhotoemissionElectronMicroscopy rdf:type owl:NamedIndividual ,
+                                          skos:Concept ;
+                                 
+                                 skos:broader :OtherImaging ;
+                                 
+                                 :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#PhotonCorrelationX-RaySpectroscopy
+
+:PhotonCorrelationX-RaySpectroscopy rdf:type owl:NamedIndividual ,
+                                             skos:Concept ;
+                                    
+                                    :isTypeOf :Technique ;
+                                    
+                                    skos:broader :X-RaySpectroscopy .
+
+
+
+###  http://www.semanticweb.org/skosOnto#PolarisedNeutronReflectivity
+
+:PolarisedNeutronReflectivity rdf:type owl:NamedIndividual ,
+                                       skos:Concept ;
+                              
+                              skos:broader :NeutronReflectometry ;
+                              
+                              :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#PowderDiffraction
+
+:PowderDiffraction rdf:type owl:NamedIndividual ,
+                            skos:Concept ;
+                   
+                   :isTypeOf :Technique ;
+                   
+                   skos:broader :X-RayDiffraction .
+
+
+
+###  http://www.semanticweb.org/skosOnto#Quasi-ElasticNeutronSpin-Echo
+
+:Quasi-ElasticNeutronSpin-Echo rdf:type owl:NamedIndividual ,
+                                        skos:Concept ;
+                               
+                               skos:broader :SpinEchoSANS ;
+                               
+                               :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ROTAX
+
+:ROTAX rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       
+       :isInstrumentOf :ISIS ;
+       
+       :isTypeOf :Instrument ;
+       
+       skos:broader :Instrument ;
+       
+       :usesTechnique :NeutronDiffraction .
+
+
+
+###  http://www.semanticweb.org/skosOnto#Reflectometry
+
+:Reflectometry rdf:type owl:NamedIndividual ,
+                        skos:Concept ;
+               
+               :isTechniqueOf :OFFSPEC ;
+               
+               :isTypeOf :Technique ;
+               
+               skos:broader :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ResonantDiffraction
+
+:ResonantDiffraction rdf:type owl:NamedIndividual ,
+                              skos:Concept ;
+                     
+                     :isTypeOf :Technique ;
+                     
+                     skos:broader :X-RayDiffraction .
+
+
+
+###  http://www.semanticweb.org/skosOnto#S18
+
+:S18 rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     skos:related :ILL ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:broader :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#SALSA
+
+:SALSA rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       
+       skos:related :ILL ;
+       
+       skos:broader :Instrument ;
+       
+       :isTypeOf :Instrument ;
+       
+       skos:related :PowderDiffraction .
+
+
+
+###  http://www.semanticweb.org/skosOnto#SAMBA
+
+:SAMBA rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       
+       skos:broader :Instrument ;
+       
+       :isTypeOf :Instrument ;
+       
+       skos:related :SOLEIL .
+
+
+
+###  http://www.semanticweb.org/skosOnto#SANDALS
+
+:SANDALS rdf:type owl:NamedIndividual ,
+                  skos:Concept ;
+         
+         :isInstrumentOf :ISIS ;
+         
+         skos:broader :Instrument ;
+         
+         :isTypeOf :Instrument ;
+         
+         skos:related :NeutronDiffraction ;
+         
+         :usesTechnique :SmallAngleNeutronScattering .
+
+
+
+###  http://www.semanticweb.org/skosOnto#SANS2D
+
+:SANS2D rdf:type owl:NamedIndividual ,
+                 skos:Concept ;
+        
+        :isInstrumentOf :ISIS ;
+        
+        :isTypeOf :Instrument ;
+        
+        skos:broader :Instrument ;
+        
+        :usesTechnique :SmallAngleNeutronScattering .
+
+
+
+###  http://www.semanticweb.org/skosOnto#SEXTANTS
+
+:SEXTANTS rdf:type owl:NamedIndividual ,
+                   skos:Concept ;
+          
+          skos:broader :Instrument ;
+          
+          :isTypeOf :Instrument ;
+          
+          skos:related :SOLEIL .
+
+
+
+###  http://www.semanticweb.org/skosOnto#SIRIUS
+
+:SIRIUS rdf:type owl:NamedIndividual ,
+                 skos:Concept ;
+        
+        skos:broader :Instrument ;
+        
+        :isTypeOf :Instrument ;
+        
+        skos:related :SOLEIL .
+
+
+
+###  http://www.semanticweb.org/skosOnto#SIXS
+
+:SIXS rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:broader :Instrument ;
+      
+      skos:related :SOLEIL .
+
+
+
+###  http://www.semanticweb.org/skosOnto#SMIS
+
+:SMIS rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      skos:broader :Instrument ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:related :SOLEIL .
+
+
+
+###  http://www.semanticweb.org/skosOnto#SOLEIL
+
+:SOLEIL rdf:type owl:NamedIndividual ,
+                 skos:Concept ;
+        
+        skos:broader :Facility ;
+        
+        :isTypeOf :Facility .
+
+
+
+###  http://www.semanticweb.org/skosOnto#SURF
+
+:SURF rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      :isInstrumentOf :ISIS ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:broader :Instrument ;
+      
+      :usesTechnique :Reflectometry .
+
+
+
+###  http://www.semanticweb.org/skosOnto#SWING
+
+:SWING rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       
+       :isTypeOf :Instrument ;
+       
+       skos:broader :Instrument ;
+       
+       skos:related :SOLEIL .
+
+
+
+###  http://www.semanticweb.org/skosOnto#SXD
+
+:SXD rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     
+     :isInstrumentOf :ISIS ;
+     
+     :isTypeOf :Instrument ;
+     
+     skos:broader :Instrument ;
+     
+     :usesTechnique :NeutronDiffraction ,
+                    :SingleCrystalDiffraction ,
+                    :TimeOfFlightSANS .
+
+
+
+###  http://www.semanticweb.org/skosOnto#ScanningTransmissionX-RayMicroscopy
+
+:ScanningTransmissionX-RayMicroscopy rdf:type owl:NamedIndividual ,
+                                              skos:Concept ;
+                                     
+                                     skos:broader :Microscopy ;
+                                     
+                                     :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#Scattering
+
+:Scattering rdf:type owl:NamedIndividual ,
+                     skos:Concept ;
+            
+            :isTypeOf :Technique ;
+            
+            skos:broader :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#SingleCrystalDiffraction
+
+:SingleCrystalDiffraction rdf:type owl:NamedIndividual ,
+                                   skos:Concept ;
+                          
+                          skos:broader :NeutronDiffraction ;
+                          
+                          :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#SmallAngleDiffraction
+
+:SmallAngleDiffraction rdf:type owl:NamedIndividual ,
+                                skos:Concept ;
+                       
+                       :isTypeOf :Technique ;
+                       
+                       skos:broader :X-RayDiffraction .
+
+
+
+###  http://www.semanticweb.org/skosOnto#SmallAngleLightScattering
+
+:SmallAngleLightScattering rdf:type owl:NamedIndividual ,
+                                    skos:Concept ;
+                           
+                           skos:altLabel "SALS" ,
+                                         "LS" ;
+                           
+                           skos:broader :Scattering ;
+                           
+                           :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#SmallAngleNeutronScattering
+
+:SmallAngleNeutronScattering rdf:type owl:NamedIndividual ,
+                                      skos:Concept ;
+                             
+                             skos:altLabel "SANS" ;
+                             
+                             skos:broader :Scattering ;
+                             
+                             :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#SmallAngleX-RayScattering
+
+:SmallAngleX-RayScattering rdf:type owl:NamedIndividual ,
+                                    skos:Concept ;
+                           
+                           skos:altLabel "SAXS"@en ;
+                           
+                           :isTypeOf :Technique ;
+                           
+                           skos:broader :X-RaySAXS .
+
+
+
+###  http://www.semanticweb.org/skosOnto#SoftDiffraction
+
+:SoftDiffraction rdf:type owl:NamedIndividual ,
+                          skos:Concept ;
+                 
+                 :isTypeOf :Technique ;
+                 
+                 skos:broader :X-RayDiffraction .
+
+
+
+###  http://www.semanticweb.org/skosOnto#SoftX-RaySAX
+
+:SoftX-RaySAX rdf:type owl:NamedIndividual ,
+                       skos:Concept ;
+              
+              :isTypeOf :Technique ;
+              
+              skos:broader :X-RaySAXS .
+
+
+
+###  http://www.semanticweb.org/skosOnto#Spectroscopy
+
+:Spectroscopy rdf:type owl:NamedIndividual ,
+                       skos:Concept ;
+              
+              :isTypeOf :Technique ;
+              
+              skos:broader :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#Spin-EchoResolvedGrazingIncidenceScattering
+
+:Spin-EchoResolvedGrazingIncidenceScattering rdf:type owl:NamedIndividual ,
+                                                      skos:Concept ;
+                                             
+                                             skos:altLabel "SERGIS"@en ;
+                                             
+                                             :isTechniqueOf :OFFSPEC ;
+                                             
+                                             skos:broader :SpinEchoSANS ;
+                                             
+                                             :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#Spin-EchoSmallAngleNeutronScattering
+
+:Spin-EchoSmallAngleNeutronScattering rdf:type owl:NamedIndividual ,
+                                               skos:Concept ;
+                                      
+                                      skos:altLabel "SESANS"@en ;
+                                      
+                                      :isTechniqueOf :OFFSPEC ;
+                                      
+                                      skos:broader :SpinEchoSANS ;
+                                      
+                                      :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#SpinEchoSANS
+
+:SpinEchoSANS rdf:type owl:NamedIndividual ,
+                       skos:Concept ;
+              
+              skos:broader :SmallAngleNeutronScattering ;
+              
+              :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#SuperADAM
+
+:SuperADAM rdf:type owl:NamedIndividual ,
+                    skos:Concept ;
+           
+           skos:related :ILL ;
+           
+           :isTypeOf :Instrument ;
+           
+           skos:broader :Instrument ;
+           
+           skos:related :SingleCrystalDiffraction .
+
+
+
+###  http://www.semanticweb.org/skosOnto#SurfaceDiffraction
+
+:SurfaceDiffraction rdf:type owl:NamedIndividual ,
+                             skos:Concept ;
+                    
+                    :isTypeOf :Technique ;
+                    
+                    skos:broader :X-RayDiffraction .
+
+
+
+###  http://www.semanticweb.org/skosOnto#TEMPO
+
+:TEMPO rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       
+       :isTypeOf :Instrument ;
+       
+       skos:broader :Instrument ;
+       
+       skos:related :SOLEIL .
+
+
+
+###  http://www.semanticweb.org/skosOnto#TOSCA
+
+:TOSCA rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       
+       :isInstrumentOf :ISIS ;
+       
+       skos:broader :Instrument ;
+       
+       :isTypeOf :Instrument ;
+       
+       :usesTechnique :NeutronSpectroscopy .
+
+
+
+###  http://www.semanticweb.org/skosOnto#Technique
+
+:Technique rdf:type owl:NamedIndividual ,
+                    skos:Concept ;
+           
+           skos:related :Instrument .
+
+
+
+###  http://www.semanticweb.org/skosOnto#Time-Of-FlightInvertedGeometryCrystalAnalyserSpectrometer
+
+:Time-Of-FlightInvertedGeometryCrystalAnalyserSpectrometer rdf:type owl:NamedIndividual ,
+                                                                    skos:Concept ;
+                                                           
+                                                           skos:broader :NeutronSpectroscopy ;
+                                                           
+                                                           :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#TimeOfFlightSANS
+
+:TimeOfFlightSANS rdf:type owl:NamedIndividual ,
+                           skos:Concept ;
+                  
+                  :isTechniqueOf :SXD ;
+                  
+                  skos:broader :SmallAngleNeutronScattering ;
+                  
+                  :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#TomographicMicroscopyWithCRLS
+
+:TomographicMicroscopyWithCRLS rdf:type owl:NamedIndividual ,
+                                        skos:Concept ;
+                               
+                               skos:broader :Microscopy ;
+                               
+                               :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#Tomography
+
+:Tomography rdf:type owl:NamedIndividual ,
+                     skos:Concept ;
+            
+            skos:broader :Imaging ;
+            
+            :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#Triple-AxisSpectroscopy
+
+:Triple-AxisSpectroscopy rdf:type owl:NamedIndividual ,
+                                  skos:Concept ;
+                         
+                         skos:altLabel "TAS"@en ;
+                         
+                         skos:broader :NeutronSpectroscopy ;
+                         
+                         :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#UVAndVisibleCircularDichroismSpectroscopy
+
+:UVAndVisibleCircularDichroismSpectroscopy rdf:type owl:NamedIndividual ,
+                                                    skos:Concept ;
+                                           
+                                           skos:broader :OtherLightSpectroscopy ;
+                                           
+                                           :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#UltraX-RaySAX
+
+:UltraX-RaySAX rdf:type owl:NamedIndividual ,
+                        skos:Concept ;
+               
+               :isTypeOf :Technique ;
+               
+               skos:broader :X-RaySAXS .
+
+
+
+###  http://www.semanticweb.org/skosOnto#UvVuvSpectroscopy
+
+:UvVuvSpectroscopy rdf:type owl:NamedIndividual ,
+                            skos:Concept ;
+                   
+                   skos:broader :OtherLightSpectroscopy ;
+                   
+                   :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#VESUVIO
+
+:VESUVIO rdf:type owl:NamedIndividual ,
+                  skos:Concept ;
+         
+         :isInstrumentOf :ISIS ;
+         
+         skos:broader :Instrument ;
+         
+         :isTypeOf :Instrument ;
+         
+         :usesTechnique :NeutronSpectroscopy .
+
+
+
+###  http://www.semanticweb.org/skosOnto#VIVALDI
+
+:VIVALDI rdf:type owl:NamedIndividual ,
+                  skos:Concept ;
+         
+         skos:related :ILL ;
+         
+         :isTypeOf :Instrument ;
+         
+         skos:broader :Instrument ;
+         
+         skos:related :SingleCrystalDiffraction .
+
+
+
+###  http://www.semanticweb.org/skosOnto#WISH
+
+:WISH rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      
+      :isInstrumentOf :ISIS ;
+      
+      :isTypeOf :Instrument ;
+      
+      skos:broader :Instrument ;
+      
+      :usesTechnique :NeutronDiffraction .
+
+
+
+###  http://www.semanticweb.org/skosOnto#WideAngleX-RaySAXS
+
+:WideAngleX-RaySAXS rdf:type owl:NamedIndividual ,
+                             skos:Concept ;
+                    
+                    :isTypeOf :Technique ;
+                    
+                    skos:broader :X-RaySAXS .
+
+
+
+###  http://www.semanticweb.org/skosOnto#X-RayAbsorptionSpectroscopy
+
+:X-RayAbsorptionSpectroscopy rdf:type owl:NamedIndividual ,
+                                      skos:Concept ;
+                             
+                             skos:altLabel "XAS"@en ;
+                             
+                             :isTypeOf :Technique ;
+                             
+                             skos:broader :X-RaySpectroscopy .
+
+
+
+###  http://www.semanticweb.org/skosOnto#X-RayDiffraction
+
+:X-RayDiffraction rdf:type owl:NamedIndividual ,
+                           skos:Concept ;
+                  
+                  skos:broader :Diffraction .
+
+
+
+###  http://www.semanticweb.org/skosOnto#X-RayDiffractionImaging
+
+:X-RayDiffractionImaging rdf:type owl:NamedIndividual ,
+                                  skos:Concept ;
+                         
+                         :isTypeOf :Technique ;
+                         
+                         skos:broader :X-RayImaging .
+
+
+
+###  http://www.semanticweb.org/skosOnto#X-RayExcitedOpticalLuminescence
+
+:X-RayExcitedOpticalLuminescence rdf:type owl:NamedIndividual ,
+                                          skos:Concept ;
+                                 
+                                 skos:broader :FluorescenceLuminescence ;
+                                 
+                                 :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#X-RayFluorescence
+
+:X-RayFluorescence rdf:type owl:NamedIndividual ,
+                            skos:Concept ;
+                   
+                   skos:altLabel "XRF"@en ;
+                   
+                   skos:broader :FluorescenceLuminescence ;
+                   
+                   :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#X-RayImaging
+
+:X-RayImaging rdf:type owl:NamedIndividual ,
+                       skos:Concept ;
+              
+              skos:broader :Imaging ;
+              
+              :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#X-RayLinearDichroism
+
+:X-RayLinearDichroism rdf:type owl:NamedIndividual ,
+                               skos:Concept ;
+                      
+                      skos:broader :Dichroism ;
+                      
+                      :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#X-RayMagneticCircularDichroism
+
+:X-RayMagneticCircularDichroism rdf:type owl:NamedIndividual ,
+                                         skos:Concept ;
+                                
+                                skos:altLabel "XMCD"@en ;
+                                
+                                skos:broader :Dichroism ;
+                                
+                                :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#X-RayMagneticLinearDichroism
+
+:X-RayMagneticLinearDichroism rdf:type owl:NamedIndividual ,
+                                       skos:Concept ;
+                              
+                              skos:broader :Dichroism ;
+                              
+                              :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#X-RayMagnetochiralDichroism
+
+:X-RayMagnetochiralDichroism rdf:type owl:NamedIndividual ,
+                                      skos:Concept ;
+                             
+                             skos:broader :Dichroism ;
+                             
+                             :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#X-RayNaturalCircularDichroism
+
+:X-RayNaturalCircularDichroism rdf:type owl:NamedIndividual ,
+                                        skos:Concept ;
+                               
+                               skos:broader :Dichroism ;
+                               
+                               :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#X-RayNaturalLinearDichroism
+
+:X-RayNaturalLinearDichroism rdf:type owl:NamedIndividual ,
+                                      skos:Concept ;
+                             
+                             skos:broader :Dichroism ;
+                             
+                             :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#X-RayPhotoemissionMicroscopy
+
+:X-RayPhotoemissionMicroscopy rdf:type owl:NamedIndividual ,
+                                       skos:Concept ;
+                              
+                              skos:broader :Microscopy ;
+                              
+                              :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#X-RayReflectometry
+
+:X-RayReflectometry rdf:type owl:NamedIndividual ,
+                             skos:Concept ;
+                    
+                    skos:broader :Reflectometry ;
+                    
+                    :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#X-RaySAXS
+
+:X-RaySAXS rdf:type owl:NamedIndividual ,
+                    skos:Concept ;
+           
+           skos:broader :Scattering ;
+           
+           :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#X-RayScanningMicroscopy
+
+:X-RayScanningMicroscopy rdf:type owl:NamedIndividual ,
+                                  skos:Concept ;
+                         
+                         skos:broader :Microscopy ;
+                         
+                         :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#X-RaySpectroscopy
+
+:X-RaySpectroscopy rdf:type owl:NamedIndividual ,
+                            skos:Concept ;
+                   
+                   skos:broader :Spectroscopy ;
+                   
+                   :isTypeOf :Technique .
+
+
+
+###  http://www.semanticweb.org/skosOnto#XRRX-RayReflectivity
+
+:XRRX-RayReflectivity rdf:type owl:NamedIndividual ,
+                               skos:Concept ;
+                      
+                      :isTypeOf :Technique ;
+                      
+                      skos:broader :X-RayReflectometry .
+
+
+
+
+###  Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net
+
