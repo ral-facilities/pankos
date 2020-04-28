@@ -1,0 +1,3967 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.purl.org/pankos"
+     xml:base="http://www.purl.org/pankos"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:nxs="http://definition.nexusformat.org/nxdl/3.1#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:pankos="http://www.purl.org/pankos#">
+    <owl:Ontology rdf:about="http://www.purl.org/pankos">
+        <owl:versionIRI rdf:resource="http://www.purl.org/pankos/draft-v2"/>
+        <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#Name">Brian Matthews</dc:contributor>
+        <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#Name">Erica Yang</dc:contributor>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#Name">Holly Zhen</dc:creator>
+        <dc:description>This ontology describes various neutron and synchrotron facilities from all over Europe, with information regarding their instruments and  techniques used.</dc:description>
+        <dc:publisher>Science and Technology Facilities Council</dc:publisher>
+        <dc:title>Proton and Neutron Knowledge Organisation System</dc:title>
+        <terms:license>https://creativecommons.org/licenses/by/4.0/</terms:license>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Pankos</rdfs:label>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">2.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/publisher -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/publisher"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://www.purl.org/pankos#preferredName -->
+
+    <owl:AnnotationProperty rdf:about="http://www.purl.org/pankos#preferredName"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.purl.org/pankos#hasDetector -->
+
+    <owl:ObjectProperty rdf:about="http://www.purl.org/pankos#hasDetector">
+        <rdfs:domain rdf:resource="http://www.purl.org/pankos#Instrument"/>
+        <rdfs:range rdf:resource="http://www.purl.org/pankos#SampleEnvironment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.purl.org/pankos#hasDetectorCharasteristics -->
+
+    <owl:ObjectProperty rdf:about="http://www.purl.org/pankos#hasDetectorCharasteristics">
+        <rdfs:domain rdf:resource="http://www.purl.org/pankos#Detector"/>
+        <rdfs:range rdf:resource="http://www.purl.org/pankos#ObjectCharacteristics"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.purl.org/pankos#hasEnergyLevel -->
+
+    <owl:ObjectProperty rdf:about="http://www.purl.org/pankos#hasEnergyLevel"/>
+    
+
+
+    <!-- http://www.purl.org/pankos#hasInstrument -->
+
+    <owl:ObjectProperty rdf:about="http://www.purl.org/pankos#hasInstrument">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.purl.org/pankos#inFacility"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.purl.org/pankos#Facility"/>
+        <rdfs:range rdf:resource="http://www.purl.org/pankos#Instrument"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.purl.org/pankos#hasInstrumentCharacteristics -->
+
+    <owl:ObjectProperty rdf:about="http://www.purl.org/pankos#hasInstrumentCharacteristics">
+        <rdfs:domain rdf:resource="http://www.purl.org/pankos#Instrument"/>
+        <rdfs:range rdf:resource="http://www.purl.org/pankos#ObjectCharacteristics"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.purl.org/pankos#hasOperationStatus -->
+
+    <owl:ObjectProperty rdf:about="http://www.purl.org/pankos#hasOperationStatus">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.purl.org/pankos#StatusValuePartition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.purl.org/pankos#hasPressureLevel -->
+
+    <owl:ObjectProperty rdf:about="http://www.purl.org/pankos#hasPressureLevel">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:range rdf:resource="http://www.purl.org/pankos#PressureLevelValuePartition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.purl.org/pankos#hasResolutionLevel -->
+
+    <owl:ObjectProperty rdf:about="http://www.purl.org/pankos#hasResolutionLevel">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.purl.org/pankos#ResolutionLevelValuePartition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.purl.org/pankos#hasSampleEnvironment -->
+
+    <owl:ObjectProperty rdf:about="http://www.purl.org/pankos#hasSampleEnvironment">
+        <rdfs:domain rdf:resource="http://www.purl.org/pankos#Instrument"/>
+        <rdfs:range rdf:resource="http://www.purl.org/pankos#SampleEnvironment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.purl.org/pankos#hasSampleEnvironmentCharacteristics -->
+
+    <owl:ObjectProperty rdf:about="http://www.purl.org/pankos#hasSampleEnvironmentCharacteristics">
+        <rdfs:domain rdf:resource="http://www.purl.org/pankos#SampleEnvironment"/>
+        <rdfs:range rdf:resource="http://www.purl.org/pankos#ObjectCharacteristics"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.purl.org/pankos#hasSubFacility -->
+
+    <owl:ObjectProperty rdf:about="http://www.purl.org/pankos#hasSubFacility"/>
+    
+
+
+    <!-- http://www.purl.org/pankos#inFacility -->
+
+    <owl:ObjectProperty rdf:about="http://www.purl.org/pankos#inFacility">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.purl.org/pankos#Instrument"/>
+        <rdfs:range rdf:resource="http://www.purl.org/pankos#Facility"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.purl.org/pankos#supportsTechnique -->
+
+    <owl:ObjectProperty rdf:about="http://www.purl.org/pankos#supportsTechnique">
+        <owl:inverseOf rdf:resource="http://www.purl.org/pankos#techniqueOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.purl.org/pankos#Instrument"/>
+        <rdfs:range rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.purl.org/pankos#techniqueOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.purl.org/pankos#techniqueOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <rdfs:range rdf:resource="http://www.purl.org/pankos#Instrument"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.purl.org/pankos#usesFileFormat -->
+
+    <owl:ObjectProperty rdf:about="http://www.purl.org/pankos#usesFileFormat">
+        <rdfs:domain rdf:resource="http://www.purl.org/pankos#Facility"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.org/pankosv2CallipsoNeXus#energyRangeMax -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/pankosv2CallipsoNeXus#energyRangeMax">
+        <rdfs:subPropertyOf rdf:resource="http://www.purl.org/pankos#objectCharasteristicsValue"/>
+        <rdfs:domain rdf:resource="http://www.purl.org/pankos#ObjectCharacteristics"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/pankosv2CallipsoNeXus#energyRangeMin -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/pankosv2CallipsoNeXus#energyRangeMin">
+        <rdfs:subPropertyOf rdf:resource="http://www.purl.org/pankos#objectCharasteristicsValue"/>
+        <rdfs:domain rdf:resource="http://www.purl.org/pankos#ObjectCharacteristics"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/pankosv2CallipsoNeXus#energyResolution -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/pankosv2CallipsoNeXus#energyResolution">
+        <rdfs:subPropertyOf rdf:resource="http://www.purl.org/pankos#objectCharasteristicsValue"/>
+        <rdfs:domain rdf:resource="http://www.purl.org/pankos#ObjectCharacteristics"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/pankosv2CallipsoNeXus#fluxOnSampleMax -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/pankosv2CallipsoNeXus#fluxOnSampleMax">
+        <rdfs:subPropertyOf rdf:resource="http://www.purl.org/pankos#objectCharasteristicsValue"/>
+        <rdfs:domain rdf:resource="http://www.purl.org/pankos#ObjectCharacteristics"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/pankosv2CallipsoNeXus#resolvingPower -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/pankosv2CallipsoNeXus#resolvingPower">
+        <rdfs:subPropertyOf rdf:resource="http://www.purl.org/pankos#objectCharasteristicsValue"/>
+        <rdfs:domain rdf:resource="http://www.purl.org/pankos#ObjectCharacteristics"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/pankosv2CallipsoNeXus#spotSizeOnSampleHor -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/pankosv2CallipsoNeXus#spotSizeOnSampleHor">
+        <rdfs:subPropertyOf rdf:resource="http://www.purl.org/pankos#objectCharasteristicsValue"/>
+        <rdfs:domain rdf:resource="http://www.purl.org/pankos#ObjectCharacteristics"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/pankosv2CallipsoNeXus#spotSizeOnSampleVert -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/pankosv2CallipsoNeXus#spotSizeOnSampleVert">
+        <rdfs:subPropertyOf rdf:resource="http://www.purl.org/pankos#objectCharasteristicsValue"/>
+        <rdfs:domain rdf:resource="http://www.purl.org/pankos#ObjectCharacteristics"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.purl.org/pankos#objectCharasteristicsValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.purl.org/pankos#objectCharasteristicsValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.purl.org/pankos#objectCharasteristicsValue"/>
+        <rdfs:domain rdf:resource="http://www.purl.org/pankos#ObjectCharacteristics"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.purl.org/pankos#objectsCharacteristicsDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.purl.org/pankos#objectsCharacteristicsDescription">
+        <rdfs:domain rdf:resource="http://www.purl.org/pankos#ObjectCharacteristics"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.purl.org/pankos#objectsCharacteristicsUnit -->
+
+    <owl:DatatypeProperty rdf:about="http://www.purl.org/pankos#objectsCharacteristicsUnit">
+        <rdfs:domain rdf:resource="http://www.purl.org/pankos#ObjectCharacteristics"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.purl.org/pankos#pressureMax -->
+
+    <owl:DatatypeProperty rdf:about="http://www.purl.org/pankos#pressureMax">
+        <rdfs:subPropertyOf rdf:resource="http://www.purl.org/pankos#objectCharasteristicsValue"/>
+        <rdfs:domain rdf:resource="http://www.purl.org/pankos#ObjectCharacteristics"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.purl.org/pankos#temperatureMax -->
+
+    <owl:DatatypeProperty rdf:about="http://www.purl.org/pankos#temperatureMax">
+        <rdfs:subPropertyOf rdf:resource="http://www.purl.org/pankos#objectCharasteristicsValue"/>
+        <rdfs:domain rdf:resource="http://www.purl.org/pankos#ObjectCharacteristics"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.purl.org/pankos#temperatureMin -->
+
+    <owl:DatatypeProperty rdf:about="http://www.purl.org/pankos#temperatureMin">
+        <rdfs:subPropertyOf rdf:resource="http://www.purl.org/pankos#objectCharasteristicsValue"/>
+        <rdfs:domain rdf:resource="http://www.purl.org/pankos#ObjectCharacteristics"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/AgentClass -->
+
+    <owl:Class rdf:about="http://purl.org/dc/terms/AgentClass">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#BackScatteringSpectrometer -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#BackScatteringSpectrometer">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#NeutronSpectrometer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#Decommissioned -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#Decommissioned">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#StatusValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#Detector -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#Detector"/>
+    
+
+
+    <!-- http://www.purl.org/pankos#Dichroism -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#Dichroism">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#X-RaySpectroscopy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#Diffraction -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#Diffraction">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#EnergyLevelValuePartition -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#EnergyLevelValuePartition">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.purl.org/pankos#HighEnergy"/>
+                    <rdf:Description rdf:about="http://www.purl.org/pankos#LowEngergy"/>
+                    <rdf:Description rdf:about="http://www.purl.org/pankos#MediumEnergy"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#ValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#Facility -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#Facility">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <owl:disjointWith rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#FileFormat -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#FileFormat"/>
+    
+
+
+    <!-- http://www.purl.org/pankos#FluorescenceLuminescence -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#FluorescenceLuminescence">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Luminescence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#FreeElectronLaser -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#FreeElectronLaser">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#GammaRaySpectrometer -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#GammaRaySpectrometer">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Spectrometer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#HighEnergy -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#HighEnergy">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#EnergyLevelValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#HighPressure -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#HighPressure">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#PressureLevelValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#HighResolution -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#HighResolution">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#ResolutionLevelValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#HighResolutionSpectrometer -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#HighResolutionSpectrometer">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.purl.org/pankos#Spectrometer"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.purl.org/pankos#hasResolutionLevel"/>
+                        <owl:someValuesFrom rdf:resource="http://www.purl.org/pankos#HighResolution"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#Imaging -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#Imaging">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#ImagingInstrument -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#ImagingInstrument">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.purl.org/pankos#Detector"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.purl.org/pankos#supportsTechnique"/>
+                        <owl:someValuesFrom rdf:resource="http://www.purl.org/pankos#Imaging"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Detector"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#Instrument -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#Instrument">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.purl.org/pankos#inFacility"/>
+                <owl:someValuesFrom rdf:resource="http://www.purl.org/pankos#Facility"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.purl.org/pankos#supportsTechnique"/>
+                <owl:someValuesFrom rdf:resource="http://www.purl.org/pankos#Technique"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:label xml:lang="en-us">Instrument</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#LargeScaleDiffractometer -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#LargeScaleDiffractometer">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#NeutronDiffractometer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#LaueSingleDiffractometer -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#LaueSingleDiffractometer">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#NeutronDiffractometer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#LowEngergy -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#LowEngergy">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#EnergyLevelValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#LowPressure -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#LowPressure">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#PressureLevelValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#LowResolution -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#LowResolution">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#ResolutionLevelValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#Luminescence -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#Luminescence">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#MXInstrument -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#MXInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Detector"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#MediumEnergy -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#MediumEnergy">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#EnergyLevelValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#MediumPressure -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#MediumPressure">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#PressureLevelValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#MediumResolution -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#MediumResolution">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#ResolutionLevelValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#Microscope -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#Microscope">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Detector"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#Microscopy -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#Microscopy">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Imaging"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#MuonSource -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#MuonSource">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#MuonSpectrometer -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#MuonSpectrometer">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Detector"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#NeutronDiffraction -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#NeutronDiffraction">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Diffraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#NeutronDiffractometer -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#NeutronDiffractometer">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.purl.org/pankos#Detector"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.purl.org/pankos#supportsTechnique"/>
+                        <owl:someValuesFrom rdf:resource="http://www.purl.org/pankos#NeutronDiffraction"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Detector"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#NeutronInterferometer -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#NeutronInterferometer">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#NeutronDiffractometer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#NeutronReflectometry -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#NeutronReflectometry">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Reflectometry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#NeutronSource -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#NeutronSource">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#NeutronSpectrometer -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#NeutronSpectrometer">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Spectrometer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#NeutronSpectroscopy -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#NeutronSpectroscopy">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Spectroscopy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#NexusParameters -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#NexusParameters"/>
+    
+
+
+    <!-- http://www.purl.org/pankos#NuclearParticlePhysics -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#NuclearParticlePhysics">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Detector"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#ObjectCharacteristics -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#ObjectCharacteristics"/>
+    
+
+
+    <!-- http://www.purl.org/pankos#Operational -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#Operational">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#StatusValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#PhotonSource -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#PhotonSource">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#PowerDiffractometer -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#PowerDiffractometer">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#NeutronDiffractometer"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.purl.org/pankos#supportsTechnique"/>
+                <owl:hasValue rdf:resource="http://www.purl.org/pankos#PowderDiffraction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#PressureLevelValuePartition -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#PressureLevelValuePartition">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.purl.org/pankos#HighPressure"/>
+                    <rdf:Description rdf:about="http://www.purl.org/pankos#LowPressure"/>
+                    <rdf:Description rdf:about="http://www.purl.org/pankos#MediumPressure"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#ValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#ProtonAccelerator -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#ProtonAccelerator">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#Quasi-LaueDiffractometer -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#Quasi-LaueDiffractometer">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#NeutronDiffractometer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#Reflectometer -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#Reflectometer">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Detector"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#Reflectometry -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#Reflectometry">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#ResolutionLevelValuePartition -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#ResolutionLevelValuePartition">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.purl.org/pankos#HighResolution"/>
+                    <rdf:Description rdf:about="http://www.purl.org/pankos#LowResolution"/>
+                    <rdf:Description rdf:about="http://www.purl.org/pankos#MediumResolution"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#ValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#SANSInstrument -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#SANSInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Detector"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#SampleEnvironment -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#SampleEnvironment"/>
+    
+
+
+    <!-- http://www.purl.org/pankos#ScanningTransmissionX-rayMicroscope -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#ScanningTransmissionX-rayMicroscope">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Microscope"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#Scattering -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#Scattering">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#SingleCrystalDiffractometer -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#SingleCrystalDiffractometer">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#NeutronDiffractometer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#SmallAngleNeutronScattering -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#SmallAngleNeutronScattering">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Scattering"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#SmallAngleX-RayScattering -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#SmallAngleX-RayScattering">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Scattering"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#Spectrometer -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#Spectrometer">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Detector"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#SpectroscopicPhotoemissionAndPhotoemissionElectronMicroscope -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#SpectroscopicPhotoemissionAndPhotoemissionElectronMicroscope">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Microscope"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#Spectroscopy -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#Spectroscopy">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#Spin-echoSpectrometer -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#Spin-echoSpectrometer">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#NeutronSpectrometer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#SpinEchoSANS -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#SpinEchoSANS">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#SmallAngleNeutronScattering"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#StatusValuePartition -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#StatusValuePartition">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.purl.org/pankos#Decommissioned"/>
+                    <rdf:Description rdf:about="http://www.purl.org/pankos#Operational"/>
+                    <rdf:Description rdf:about="http://www.purl.org/pankos#UnderConstruction"/>
+                    <rdf:Description rdf:about="http://www.purl.org/pankos#UnderProposal"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#ValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#Synchrotron -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#Synchrotron">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#Technique -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#Technique">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.purl.org/pankos#supportsTechnique"/>
+                <owl:someValuesFrom rdf:resource="http://www.purl.org/pankos#Technique"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#TestInstrument -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#TestInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Detector"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#ThreeAxisSpectrometer -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#ThreeAxisSpectrometer">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#NeutronSpectrometer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#Time-of-flightSpectrometer -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#Time-of-flightSpectrometer">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#NeutronSpectrometer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#Tomography -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#Tomography">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Imaging"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#UnderConstruction -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#UnderConstruction">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#StatusValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#UnderProposal -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#UnderProposal">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#StatusValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#ValuePartition -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#ValuePartition"/>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayDiffraction -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#X-RayDiffraction">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Diffraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayImaging -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#X-RayImaging">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Imaging"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayReflectometry -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#X-RayReflectometry">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Reflectometry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RaySpectroscopy -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#X-RaySpectroscopy">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Spectroscopy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/pankos#LightSALS/LS -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#LightSALS/LS">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/pankos#Scattering"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">LightSALS/LS</pankos:preferredName>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#Class -->
+
+    <owl:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.purl.org/pankos#ARPES -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#ARPES">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#AngleResolvedPhotoemissionSpectroscopy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#ASAXS -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#ASAXS">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#SmallAngleNeutronScattering"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#AnomalousSmallAngleX-RayScattering"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Anomalous Small Angle X-Ray Scattering</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#AbsorptionContrastImaging -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#AbsorptionContrastImaging">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Imaging"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Absorption Contrast Imaging</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#AbsorptionSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#AbsorptionSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Spectroscopy"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Absorption Spectroscopy</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#AngleResolvedPhotoemissionSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#AngleResolvedPhotoemissionSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#AngularDispersiveX-rayDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#AngularDispersiveX-rayDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#AnomalousDiffractiopn -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#AnomalousDiffractiopn">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#AnomalousScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#AnomalousScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#AnomalousSmallAngleX-RayScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#AnomalousSmallAngleX-RayScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#SmallAngleNeutronScattering"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Anomalous Small Angle X-Ray Scattering</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#AnomalousSurfaceX-rayScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#AnomalousSurfaceX-rayScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#BackScatteringSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#BackScatteringSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#CDI -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#CDI">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#CoherentDiffractionImaging"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#CIX -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#CIX">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#CoherentScatteringImaging"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#CTR -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#CTR">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#CrystalTruncationRods"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#CoherentDiffractionImaging -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#CoherentDiffractionImaging">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#CoherentImaging -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#CoherentImaging">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#CoherentImagingDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#CoherentImagingDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Diffraction"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Coherent Imaging Diffraction</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#CoherentRadiation -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#CoherentRadiation">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#CoherentScatteringImaging -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#CoherentScatteringImaging">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#CoherentSmallAngleX-rayScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#CoherentSmallAngleX-rayScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#ComptonScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#ComptonScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#CosmicNeutronRadiation -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#CosmicNeutronRadiation">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#CrystalTruncationRods -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#CrystalTruncationRods">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#DAFS -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#DAFS">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#DiffractionAnomalousFineStructure"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#DEI -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#DEI">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#DiffractionEnhancedImaging"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#DSC -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#DSC">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#DifferentialScanningCalorimetry"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#Decommissioned -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#Decommissioned">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Decommissioned"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#DeepX-RayLithography -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#DeepX-RayLithography">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#Dichroism -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#Dichroism">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#DifferentialScanningCalorimetry -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#DifferentialScanningCalorimetry">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#Diffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#Diffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#DiffractionAnomalousFineStructure -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#DiffractionAnomalousFineStructure">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#DiffractionContrastTomography -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#DiffractionContrastTomography">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#DiffractionEnhancedImaging -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#DiffractionEnhancedImaging">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#DiffractionImaging -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#DiffractionImaging">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#Topography"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#DiffuseX-RaySAXS -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#DiffuseX-RaySAXS">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#SmallAngleX-RayScattering"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Diffuse X-Ray SAXS</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#DiffuseX-RayScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#DiffuseX-RayScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#DispersiveX-rayDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#DispersiveX-rayDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#EDDI -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#EDDI">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#EnergyDispersiveDiffraction"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#EUV-IL -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#EUV-IL">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#ExtremeUltravioletInterferenceLithography"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#EXAFS -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#EXAFS">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#ExtendedX-rayAbsorptionFineStructure"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#ElasticNeutronScatteringSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#ElasticNeutronScatteringSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#NeutronSpectroscopy"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Elastic Neutron Scattering Spectroscopy</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#ElasticScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#ElasticScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#ElectronMicroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#ElectronMicroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Microscopy"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Electron Microscopy</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#ElectronSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#ElectronSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Spectroscopy"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Electron Spectroscopy</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#EmmissionX-RaySpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#EmmissionX-RaySpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#X-RaySpectroscopy"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Emmission X-Ray Spectroscopy</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#EnergyDispersiveDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#EnergyDispersiveDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#EnhancedImagingDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#EnhancedImagingDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Diffraction"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">EnhancedImaging Diffraction</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#ExtendedX-RayAbsorptionFineStructure -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#ExtendedX-RayAbsorptionFineStructure">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#X-RaySpectroscopy"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Extended X-Ray Absorption Fine Structure</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#ExtendedX-rayAbsorptionFineStructure -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#ExtendedX-rayAbsorptionFineStructure">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#ExtremeUltravioletInterferenceLithography -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#ExtremeUltravioletInterferenceLithography">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#FTH -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#FTH">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#FourierTransformHolography"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#FTIR -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#FTIR">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#FourierTransformInfraredMicroscopy"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#FourierTransformInfraredSpectroscopy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#FermiSurfaceMapping -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#FermiSurfaceMapping">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#FluorescenceLuminescence -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#FluorescenceLuminescence">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#FluorescenceSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#FluorescenceSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#FluorescenceLuminescence"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fluorescence Spectroscopy</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#FluorescenceTomography -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#FluorescenceTomography">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Luminescence"/>
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Tomography"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fluorescence Tomography</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#FourierTransformHolography -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#FourierTransformHolography">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#FourierTransformInfraredMicroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#FourierTransformInfraredMicroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#FourierTransformInfraredSpectroscopy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#FourierTransformInfraredSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#FourierTransformInfraredSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#FullFieldX-RayImaging -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#FullFieldX-RayImaging">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#GID -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#GID">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#GrazingIncidenceDiffraction"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#GISAXS -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#GISAXS">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#GrazingIncidenceSmallAngleScattering"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#GIXD -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#GIXD">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#GrazingIncidenceX-RayDiffraction"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#GammaSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#GammaSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Spectroscopy"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Gamma Spectroscopy</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#GrazingIncidenceDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#GrazingIncidenceDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#GrazingIncidenceSmallAngleScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#GrazingIncidenceSmallAngleScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#GrazingIncidentSANS"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#GrazingIncidenceX-RayDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#GrazingIncidenceX-RayDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#X-RayDiffraction"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Grazing Incidence X-Ray Diffraction</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#GrazingIncidentSANS -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#GrazingIncidentSANS">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#SmallAngleNeutronScattering"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Grazing Incident SANS</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#GrazingIncidentX-RaySAXS -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#GrazingIncidentX-RaySAXS">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#SmallAngleX-RayScattering"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Grazing Incident X-Ray SAXS</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#GrazingSmallAngleX-RayScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#GrazingSmallAngleX-RayScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Scattering"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Grazing Small Angle X-Ray Scattering</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#HAXPES -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#HAXPES">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#HardX-RayPhotoelectronSpectroscopy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#HERFD -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#HERFD">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#HighEnergyResolutionFluorescenceDetection"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#HIKE -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#HIKE">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#HighKineticEnergyPhotoelectronSpectroscopy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#HR-XPS -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#HR-XPS">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Spectroscopy"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#HighResolutionCore-levelPhotoemissionSpectroscopy"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">High Resolution Core-level Photoemission Spectroscopy</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#HardX-RayPhotoelectronSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#HardX-RayPhotoelectronSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#X-RaySpectroscopy"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Hard X-Ray Photoelectron Spectroscopy</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#HighAngularAndHighSpatialResolutionDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#HighAngularAndHighSpatialResolutionDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#HighEnergy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#HighEnergy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#HighEnergy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#HighEnergyResolutionFluorescenceDetection -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#HighEnergyResolutionFluorescenceDetection">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#HighKineticEnergyPhotoelectronSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#HighKineticEnergyPhotoelectronSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#HighPressure -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#HighPressure">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#HighPressure"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#HighResolutinoPhotoElectronSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#HighResolutinoPhotoElectronSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Spectroscopy"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">High Resolutino Photoelectron Spectroscopy</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#HighResolution -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#HighResolution">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#HighResolution"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#HighResolutionCore-levelPhotoemissionSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#HighResolutionCore-levelPhotoemissionSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Spectroscopy"/>
+        <pankos:hasResolutionLevel rdf:resource="http://www.purl.org/pankos#HighResolution"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">High Resolution Core-level Photoemission Spectroscopy</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#HighResolutionPowderDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#HighResolutionPowderDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#NeutronDiffraction"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">High Resolution Powder Diffraction</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#HighResolutionSpectrometer -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#HighResolutionSpectrometer"/>
+    
+
+
+    <!-- http://www.purl.org/pankos#Holography -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#Holography">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Imaging"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Holography</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#HumidityControl -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#HumidityControl">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#IRMicroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#IRMicroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#IRSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#IRSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#InfraRedSpectroscopy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#IXS -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#IXS">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#InelasticX-RayScattering"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#Imaging -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#Imaging">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#ImagingDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#ImagingDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Diffraction"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Imaging Diffraction</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#ImagingX-rayPhotoelectronSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#ImagingX-rayPhotoelectronSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#In-situMagnetronSputtering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#In-situMagnetronSputtering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#In-situSurfaceDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#In-situSurfaceDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#SD"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#In-situX-RayDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#In-situX-RayDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#InSituSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#InSituSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#InelasticNeutronScatteringSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#InelasticNeutronScatteringSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#NeutronSpectroscopy"/>
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Inelastic Neutron Scattering Spectroscopy</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#InelasticX-RaySAXS -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#InelasticX-RaySAXS">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#SmallAngleX-RayScattering"/>
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Inelastic X-Ray SAXS</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#InelasticX-RayScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#InelasticX-RayScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#InfraRedSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#InfraRedSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#Infrared -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#Infrared">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#InfraredAbsorptionSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#InfraredAbsorptionSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#InfraredMicroSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#InfraredMicroSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Spectroscopy"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Infrared Microspectroscopy</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#K-edgeSubtractionImaging -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#K-edgeSubtractionImaging">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#Laminography -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#Laminography">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#LaueDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#LaueDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#Litho-EUV -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#Litho-EUV">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#LowEnergy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#LowEnergy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#LowEngergy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#LowPressure -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#LowPressure">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#LowPressure"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#LowResolution -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#LowResolution">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#LowResolution"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#Luminescence -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#Luminescence">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#MAD -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#MAD">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#Multi-wavelengthAnomalousDispersion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#MOKE -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#MOKE">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#MagneticOpticalKerrEffect"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#MacromolecularCrystallography -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#MacromolecularCrystallography">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#MagneticOpticalKerrEffect -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#MagneticOpticalKerrEffect">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#MagneticSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#MagneticSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#MassSeparatorSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#MassSeparatorSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#NeutronSpectroscopy"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Mass Separator Spectroscopy</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#MassSpectrometry -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#MassSpectrometry">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#MediumEngergy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#MediumEngergy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#MediumEnergy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#MediumPressure -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#MediumPressure">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#MediumPressure"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#MediumResolution -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#MediumResolution">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#MediumResolution"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#MiccroGISAXSTomography -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#MiccroGISAXSTomography">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#X-RayImaging"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Micro GISAXS Tomography</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#MicroBeam -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#MicroBeam">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#MicroPowderDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#MicroPowderDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#MicroSAXSTomography -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#MicroSAXSTomography">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#X-RayImaging"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Micro SAXS Tomography</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#MicroTomography -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#MicroTomography">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#MicroX-RayAbsorptionNear-edgeStructure -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#MicroX-RayAbsorptionNear-edgeStructure">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#MicroXANES"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#MicroX-RayAbsorptionSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#MicroX-RayAbsorptionSpectroscopy">
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#MicroXAS"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#MicroX-RayFluorescence -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#MicroX-RayFluorescence">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#FluorescenceLuminescence"/>
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#MicroXRF"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Micro X-Ray Fluorescence</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#MicroXANES -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#MicroXANES">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#MicroXAS -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#MicroXAS">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <rdfs:comment xml:lang="en">Environmental and Materials Sciences</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#MicroXRF -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#MicroXRF">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#MicrobeamRadiationTherapy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#MicrobeamRadiationTherapy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#Microcrystallography -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#Microcrystallography">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#MicrofocusX-RayScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#MicrofocusX-RayScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Scattering"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Microfocus X-Ray Scattering</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#MicroforcusSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#MicroforcusSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#Microscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#Microscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#MonochromaticImaging -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#MonochromaticImaging">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#Multi-wavelengthAnomalousDispersion -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#Multi-wavelengthAnomalousDispersion">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#MuonSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#MuonSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Spectroscopy"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Muon Spectroscopy</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#MuonSpinSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#MuonSpinSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#NEXAFS -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#NEXAFS">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#NearEdgeX-rayAbsorptionFineStructureSpectroscopy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#NIXS -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#NIXS">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#Non-resonantinelasticX-rayScattering"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#NRS -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#NRS">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#NuclearResonantScattering"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#Nano-ARPES -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#Nano-ARPES">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#NanofocusX-RayScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#NanofocusX-RayScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Scattering"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Nanofocus X-Ray Scattering</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#NearEdgeX-rayAbsorptionFineStructureSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#NearEdgeX-rayAbsorptionFineStructureSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#NeutronAutoradiography -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#NeutronAutoradiography">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#NeutronDepolarisation -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#NeutronDepolarisation">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#NeutronDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#NeutronDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#NeutronInterferometry -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#NeutronInterferometry">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#NeutronReflectometry -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#NeutronReflectometry">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#NeutronScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#NeutronScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#NeutronSpectrometer -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#NeutronSpectrometer"/>
+    
+
+
+    <!-- http://www.purl.org/pankos#NeutronSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#NeutronSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#NeutronTransmissionRadiography -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#NeutronTransmissionRadiography">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#Nexus -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#Nexus">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#FileFormat"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#Non-resonantinelasticX-rayScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#Non-resonantinelasticX-rayScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#NonCrystallineDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#NonCrystallineDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#NuclearResonance -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#NuclearResonance">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#NuclearResonantScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#NuclearResonantScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#Operational -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#Operational">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Operational"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#OpticalSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#OpticalSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Spectroscopy"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Optical Spectroscopy</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#PCI -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#PCI">
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#PhaseContrastImaging"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#PD -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#PD">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Diffraction"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#PowderDiffraction"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Powder Diffraction</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#PDF -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#PDF">
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#PairDistributionFunction"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#PEEM -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#PEEM">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#PhotoemissionElectronMicroscopy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#PairDistributionFunction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#PairDistributionFunction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#PairDistributionFunctionAnalysis -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#PairDistributionFunctionAnalysis">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#PhaseContrastImaging -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#PhaseContrastImaging">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Imaging"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Phase Contrast Imaging</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#PhotoElectronSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#PhotoElectronSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#PhotoelectronDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#PhotoelectronDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#X-RayDiffraction"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Photoelectron Diffraction</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#PhotoemissionElectronMicroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#PhotoemissionElectronMicroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Imaging"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#PhotoemissionSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#PhotoemissionSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#PhotonCorrelationX-RaySpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#PhotonCorrelationX-RaySpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#X-RaySpectroscopy"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#X-RayPhotonCorrelationSpectroscopy"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Photon Correlation X-Ray Spectroscopy</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#PinkBeamImaging -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#PinkBeamImaging">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#PolarisationAnalysis -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#PolarisationAnalysis">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#PolarisedNeutronReflectivity -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#PolarisedNeutronReflectivity">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#NeutronReflectometry"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Polarised Neutron Reflectivity</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#PolarisedNeutronReflectometry -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#PolarisedNeutronReflectometry">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Reflectometry"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Polarised Neutron Reflectometry</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#PowderDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#PowderDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#NeutronDiffraction"/>
+        <rdf:type rdf:resource="http://www.purl.org/pankos#X-RayDiffraction"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Powder Diffraction</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#PowerDiffractometer -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#PowerDiffractometer"/>
+    
+
+
+    <!-- http://www.purl.org/pankos#QuasiElasticNeutronSpinEchoScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#QuasiElasticNeutronSpinEchoScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#SpinEchoSANS"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Quasi Elastic Neutron Spin Echo Scattering</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#QuasielasticScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#QuasielasticScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#RESPES -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#RESPES">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#ResonantPhotoemission"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#RF-mSR -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#RF-mSR">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#RadioFrequencyMuonSpin_Resonance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#RIXS -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#RIXS">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#ResonantInelasticSoftX-RayScattering"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#RadioFrequencyMuonSpin_Resonance -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#RadioFrequencyMuonSpin_Resonance">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#Radiography -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#Radiography">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#RamanSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#RamanSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#Raw -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#Raw">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#FileFormat"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#Reflectometry -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#Reflectometry">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#ResonantAbsorption -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#ResonantAbsorption">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#ResonantDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#ResonantDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#X-RayDiffraction"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Resonant Diffraction</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#ResonantInelasticSoftX-RayScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#ResonantInelasticSoftX-RayScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#ResonantPhotoemission -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#ResonantPhotoemission">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#ResonantScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#ResonantScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Scattering"/>
+        <pankos:supportsTechnique rdf:resource="http://www.purl.org/pankos#HardX-RayPhotoelectronSpectroscopy"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Resonant Scattering</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#ResonantSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#ResonantSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#ResonantX-RayScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#ResonantX-RayScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Scattering"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Resonant X-Ray Scattering</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#SARPES -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#SARPES">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#SpinAndAngleResolvedPhotoelectronSpectroscopy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#SAXS -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#SAXS">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#SmallAngleX-RayScattering"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#SmallAngleX-RayScattering"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Small Angle X-Ray Scattering</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#SD -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#SD">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#SPM -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#SPM">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#ScanningProbeMicroscopy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#STM -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#STM">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#ScanningTunnellingMicroscopy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#STXM -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#STXM">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#ScanningTransmissionX-RayMicroscopy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#SXRD -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#SXRD">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#SurfaceX-RayDiffraction"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#ScannedEnergyandAngularPhotoelectronDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#ScannedEnergyandAngularPhotoelectronDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#ScannedProbeImaging -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#ScannedProbeImaging">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Imaging"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Scanned Probe Imaging</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#ScanningAngleResolvedPhotoemissionSpectromicroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#ScanningAngleResolvedPhotoemissionSpectromicroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Microscopy"/>
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Scanning Angle Resolved Photoemission Spectromicroscopy</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#ScanningPhotoelectronMicroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#ScanningPhotoelectronMicroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Microscopy"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Scanning Photoelectron Microscopy</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#ScanningProbeMicroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#ScanningProbeMicroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#ScanningTransmissionX-RayMicroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#ScanningTransmissionX-RayMicroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Microscopy"/>
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Scanning Transmission X-Ray Microscopy</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#ScanningTunnellingMicroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#ScanningTunnellingMicroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#ScanningX-RayFluorescence -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#ScanningX-RayFluorescence">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <rdf:type rdf:resource="http://www.purl.org/pankos#X-RayImaging"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Scanning X-Ray Fluorescence</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#Scattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#Scattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#SingleCrystalDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#SingleCrystalDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#NeutronDiffraction"/>
+        <rdf:type rdf:resource="http://www.purl.org/pankos#X-RayDiffraction"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#SingleCrystalNeutronDiffraction"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Single Crystal Diffraction</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#SingleCrystalNeutronDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#SingleCrystalNeutronDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#SmallAngleDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#SmallAngleDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#X-RayDiffraction"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Small Angle Diffraction</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#SmallAngleInelasticScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#SmallAngleInelasticScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Scattering"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Small Angle Inelastic Scattering</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#SmallAngleNeutronScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#SmallAngleNeutronScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#SmallAngleX-RayScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#SmallAngleX-RayScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#SmallAngleX-RayScattering"/>
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#SmallMoleculeDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#SmallMoleculeDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#SoftDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#SoftDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#X-RayDiffraction"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Soft Diffraction</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#SoftX-RayDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#SoftX-RayDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#SoftX-RayImaging -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#SoftX-RayImaging">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#X-RayImaging"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Soft X-Ray Imaging</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#SoftX-RayResonantScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#SoftX-RayResonantScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#SoftX-RaySAX -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#SoftX-RaySAX">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#SmallAngleX-RayScattering"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Soft  X-Ray SAX</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#Spectromicroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#Spectromicroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#Spectronanoscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#Spectronanoscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#Spectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#Spectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#SpinAndAngleResolvedPhotoelectronSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#SpinAndAngleResolvedPhotoelectronSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#SpinEchoResolvedGrazingIncidenceScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#SpinEchoResolvedGrazingIncidenceScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#SpinEchoSANS"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Spin Echo Resolved Grazing Incidence Scattering</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#SpinEchoSANS -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#SpinEchoSANS">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#SpinEchoSmallAngleNeutronScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#SpinEchoSmallAngleNeutronScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#SpinEchoSANS"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Spin Echo Small Angle Neutron Scattering</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#SpinEchoSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#SpinEchoSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#SpinResolvedPhotoemission -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#SpinResolvedPhotoemission">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#StereotaxicSynchrotronRadiationTherapy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#StereotaxicSynchrotronRadiationTherapy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#StrainAnalysis -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#StrainAnalysis">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#SurfaceDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#SurfaceDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#X-RayDiffraction"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Surface Diffraction</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#SurfaceX-RayDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#SurfaceX-RayDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#Three-AxisSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#Three-AxisSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#NeutronSpectroscopy"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#TripleAxisSpectroscopy"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Three-Axis Spectroscopy</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#Time-of-FlightDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#Time-of-FlightDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#Time-of-FlightSmallAngleNeutronDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#Time-of-FlightSmallAngleNeutronDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#NeutronDiffraction"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#TimeOfFlightSANS"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Time-of-Flight Small Angle Neutron Diffraction</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#Time-of-flightSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#Time-of-flightSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#ToFSpectroscopy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#TimeOfFlightSANS -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#TimeOfFlightSANS">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#SmallAngleNeutronScattering"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Time-of-flight SANS</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#TimeofFlightInvertedGeometryCrystalAnalyserSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#TimeofFlightInvertedGeometryCrystalAnalyserSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#NeutronSpectroscopy"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Time-of-flight Inverted Geometry Crystal Analyser Spectroscopy</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#ToFSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#ToFSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#NeutronSpectroscopy"/>
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Time-of-flight Spectroscopy</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#TomographicMicroscopyWithCRLS -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#TomographicMicroscopyWithCRLS">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Microscopy"/>
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Tomographic Microscopy With CRLS</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#Tomography -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#Tomography">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#Topography -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#Topography">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#TotalScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#TotalScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Scattering"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Total Scattering</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#TripleAxisSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#TripleAxisSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#USANS -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#USANS">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#UltraHighResolutionSmallAngleNeutronScattering"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#USAXS -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#USAXS">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#UltraSmallAngleX-RayScattering"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#UV-VisibleSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#UV-VisibleSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#UV-softX-Ray -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#UV-softX-Ray">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#UVAndVisibleCircularDichroismSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#UVAndVisibleCircularDichroismSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Spectroscopy"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">UV and Visible Circular Dichroism Spectroscopy</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#UltraHighResolutionSmallAngleNeutronScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#UltraHighResolutionSmallAngleNeutronScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#UltraSmallAngleScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#UltraSmallAngleScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#UltraSmallAngleX-RayScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#UltraSmallAngleX-RayScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#UltraX-RaySAX -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#UltraX-RaySAX">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#SmallAngleX-RayScattering"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Ultra X-Ray SAX</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#UnderConstruction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#UnderConstruction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#UnderConstruction"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#UnderProposal -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#UnderProposal">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#UnderProposal"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#UvVuvSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#UvVuvSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Spectroscopy"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Uv Vuv Spectroscopy</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#VSANS -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#VSANS">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#SmallAngleNeutronScattering"/>
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#VerySmallAngleNeutronScattering"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#VUVPhotoemission -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#VUVPhotoemission">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#VUVSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#VUVSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#VacuumUltravioletRadiation -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#VacuumUltravioletRadiation">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#VerySmallAngleNeutronScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#VerySmallAngleNeutronScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#WAXS -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#WAXS">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Scattering"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#WideAngleX-RayScattering"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Wide Angle X-Ray Scattering</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#WideAngleScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#WideAngleScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#WideAngleX-RaySAXS -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#WideAngleX-RaySAXS">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Scattering"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">High Resolution Powder Diffraction</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#WideAngleX-RayScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#WideAngleX-RayScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">WideAngleX-RayScattering</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayAbsorptionFineStructure -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#X-RayAbsorptionFineStructure">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#XAFS"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayAbsorptionNear-edgeStructure -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#X-RayAbsorptionNear-edgeStructure">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#XANES"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayAbsorptionSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#X-RayAbsorptionSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#X-RaySpectroscopy"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#XAS"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">X-Ray Absorption Spectroscopy</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayDetectedMagneticResonance -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#X-RayDetectedMagneticResonance">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#XDMR"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#X-RayDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayDiffractionImaging -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#X-RayDiffractionImaging">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#X-RayImaging"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">X-Ray Diffraction Imaging</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayEmissionSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#X-RayEmissionSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#XES"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayExcitedOpticalLuminescence -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#X-RayExcitedOpticalLuminescence">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#FluorescenceLuminescence"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">X-Ray Excited Optical Luminescence</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayFluorescence -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#X-RayFluorescence">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#FluorescenceLuminescence"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#XRF"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">X-Ray Fluorescence</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayImaging -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#X-RayImaging">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayLinearDichroism -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#X-RayLinearDichroism">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Dichroism"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">X-Ray Linear Dichroism</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayLithography -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#X-RayLithography">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayMagneticCircularDichroism -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#X-RayMagneticCircularDichroism">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <rdf:type rdf:resource="http://www.purl.org/pankos#X-RaySpectroscopy"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#XMCD"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">X-Ray Magnetic Circular Dichroism</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayMagneticLinearDichroism -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#X-RayMagneticLinearDichroism">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Dichroism"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#XMLD"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">X-Ray Magnetic Linear Dichroism</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayMagnetochiralDichroism -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#X-RayMagnetochiralDichroism">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Dichroism"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">X-Ray Magnetochiral Dichroism</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayMicroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#X-RayMicroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Microscopy"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">X-Ray Microscopy</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayNaturalCircularDichroism -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#X-RayNaturalCircularDichroism">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Dichroism"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#XNCD"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">X-Ray Natural Circular Dichroism</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayNaturalLinearDichroism -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#X-RayNaturalLinearDichroism">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Dichroism"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#XNLD"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">X-Ray Natural Linear Dichroism</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayPhotoelectronDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#X-RayPhotoelectronDiffraction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#X-RayDiffraction"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">X-Ray Photoelectron Diffraction</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayPhotoelectronSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#X-RayPhotoelectronSpectroscopy">
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#XPS"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayPhotoemissionMicroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#X-RayPhotoemissionMicroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Microscopy"/>
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">X-Ray Photoemission Microscopy</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayPhotonCorrelationSpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#X-RayPhotonCorrelationSpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <rdf:type rdf:resource="http://www.purl.org/pankos#X-RaySpectroscopy"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#XPCS"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">X-Ray Photon Correlation Spectroscopy</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayPowderDiffaction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#X-RayPowderDiffaction">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#X-RayDiffraction"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">X-Ray Powder Diffaction</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayRamanScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#X-RayRamanScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayReflectivity -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#X-RayReflectivity">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#X-RayReflectometry"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#XRR"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">X-Ray Reflectivity</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayReflectometry -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#X-RayReflectometry">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayScanningMicroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#X-RayScanningMicroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Microscopy"/>
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">X-Ray Scanning Microscopy</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#X-RayScattering">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RaySpectroscopy -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#X-RaySpectroscopy">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Spectroscopy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RaymagnetochiralDichroism -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#X-RaymagnetochiralDichroism">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Dichroism"/>
+        <owl:sameAs rdf:resource="http://www.purl.org/pankos#XMchiD"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">X-Ray Magnetochiral Dichroism</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#XAFS -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#XAFS">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#XANES -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#XANES">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#XAS -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#XAS">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#XDMR -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#XDMR">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#XES -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#XES">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#XMCD -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#XMCD">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#XMLD -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#XMLD">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Dichroism"/>
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">X-Ray Magnetic Linear Dichroism</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#XMchiD -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#XMchiD">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Dichroism"/>
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">X-Ray Magnetochiral Dichroism</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#XNCD -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#XNCD">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Dichroism"/>
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">X-Ray Natural Circular Dichroism</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#XNLD -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#XNLD">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Dichroism"/>
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">X-Ray Natural Linear Dichroism</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#XPCS -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#XPCS">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#XPD -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#XPD">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Diffraction"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">X-Ray Photoelectron Diffraction</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#XPS -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#XPS">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#XRD -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#XRD">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#XRF -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#XRF">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#XRR -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#XRR">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Technique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#XRRX-RayReflectivity -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#XRRX-RayReflectivity">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#X-RayReflectometry"/>
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">XRR X-Ray Reflectivity</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.purl.org/pankos#Dichroism">
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Dichroism</pankos:preferredName>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.purl.org/pankos#Diffraction">
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Diffraction</pankos:preferredName>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.purl.org/pankos#FluorescenceLuminescence">
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Fluorescence Luminescence</pankos:preferredName>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.purl.org/pankos#Imaging">
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Imaging</pankos:preferredName>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.purl.org/pankos#Luminescence">
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Luminescence</pankos:preferredName>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.purl.org/pankos#Microscopy">
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Microscopy</pankos:preferredName>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.purl.org/pankos#NeutronDiffraction">
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Neutron Diffraction
+</pankos:preferredName>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.purl.org/pankos#NeutronReflectometry">
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Neutron Reflectometry</pankos:preferredName>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.purl.org/pankos#NeutronSpectroscopy">
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Neutron Spectroscopy</pankos:preferredName>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.purl.org/pankos#Reflectometry">
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Reflectometry</pankos:preferredName>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.purl.org/pankos#Scattering">
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Scattering</pankos:preferredName>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.purl.org/pankos#SmallAngleNeutronScattering">
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Small Angle Neutron Scattering</pankos:preferredName>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.purl.org/pankos#SmallAngleX-RayScattering">
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Small Angle X-Ray Scattering</pankos:preferredName>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.purl.org/pankos#Spectroscopy">
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Spectroscopy</pankos:preferredName>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.purl.org/pankos#SpinEchoSANS">
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Spin Echo Small Angle Neutron Scattering</pankos:preferredName>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.purl.org/pankos#Tomography">
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Tomography</pankos:preferredName>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.purl.org/pankos#X-RayDiffraction">
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">X-Ray Diffraction</pankos:preferredName>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.purl.org/pankos#X-RayImaging">
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">X-Ray Imaging</pankos:preferredName>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.purl.org/pankos#X-RayReflectometry">
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">X-Ray Reflectometry</pankos:preferredName>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.purl.org/pankos#X-RaySpectroscopy">
+        <pankos:preferredName rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">X-Ray Spectroscopy</pankos:preferredName>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.purl.org/pankos#Decommissioned"/>
+            <rdf:Description rdf:about="http://www.purl.org/pankos#Operational"/>
+            <rdf:Description rdf:about="http://www.purl.org/pankos#UnderConstruction"/>
+            <rdf:Description rdf:about="http://www.purl.org/pankos#UnderProposal"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.purl.org/pankos#HighEnergy"/>
+            <rdf:Description rdf:about="http://www.purl.org/pankos#LowEngergy"/>
+            <rdf:Description rdf:about="http://www.purl.org/pankos#MediumEnergy"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.purl.org/pankos#HighPressure"/>
+            <rdf:Description rdf:about="http://www.purl.org/pankos#LowPressure"/>
+            <rdf:Description rdf:about="http://www.purl.org/pankos#MediumPressure"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.purl.org/pankos#HighResolution"/>
+            <rdf:Description rdf:about="http://www.purl.org/pankos#LowResolution"/>
+            <rdf:Description rdf:about="http://www.purl.org/pankos#MediumResolution"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
