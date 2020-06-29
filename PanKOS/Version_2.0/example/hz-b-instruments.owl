@@ -1,0 +1,291 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.hz-b.de/instruments#"
+     xml:base="http://www.hz-b.de/instruments"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:pankos="http://www.purl.org/pankos#"
+     xmlns:pankosv2CallipsoNeXus="http://www.example.org/pankosv2CallipsoNeXus#">
+    <owl:Ontology rdf:about="http://www.hz-b.de/instruments">
+        <owl:imports rdf:resource="http://www.purl.org/pankos/draft-v2"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://www.purl.org/pankos#preferredName -->
+
+    <owl:AnnotationProperty rdf:about="http://www.purl.org/pankos#preferredName"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.purl.org/pankos#hasInstrument -->
+
+    <owl:ObjectProperty rdf:about="http://www.purl.org/pankos#hasInstrument"/>
+    
+
+
+    <!-- http://www.purl.org/pankos#hasSubFacility -->
+
+    <owl:ObjectProperty rdf:about="http://www.purl.org/pankos#hasSubFacility"/>
+    
+
+
+    <!-- http://www.purl.org/pankos#supportsTechnique -->
+
+    <owl:ObjectProperty rdf:about="http://www.purl.org/pankos#supportsTechnique"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.org/pankosv2CallipsoNeXus#energyRangeMax -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/pankosv2CallipsoNeXus#energyRangeMax"/>
+    
+
+
+    <!-- http://www.example.org/pankosv2CallipsoNeXus#energyRangeMin -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/pankosv2CallipsoNeXus#energyRangeMin"/>
+    
+
+
+    <!-- http://www.example.org/pankosv2CallipsoNeXus#energyResolution -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/pankosv2CallipsoNeXus#energyResolution"/>
+    
+
+
+    <!-- http://www.example.org/pankosv2CallipsoNeXus#fluxOnSampleMax -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/pankosv2CallipsoNeXus#fluxOnSampleMax"/>
+    
+
+
+    <!-- http://www.example.org/pankosv2CallipsoNeXus#spotSizeOnSampleHor -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/pankosv2CallipsoNeXus#spotSizeOnSampleHor"/>
+    
+
+
+    <!-- http://www.example.org/pankosv2CallipsoNeXus#spotSizeOnSampleVert -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/pankosv2CallipsoNeXus#spotSizeOnSampleVert"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.purl.org/pankos#Facility -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#Facility"/>
+    
+
+
+    <!-- http://www.purl.org/pankos#Instrument -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#Instrument"/>
+    
+
+
+    <!-- http://www.purl.org/pankos#PhotonSource -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#PhotonSource"/>
+    
+
+
+    <!-- http://www.purl.org/pankos#SampleEnvironment -->
+
+    <owl:Class rdf:about="http://www.purl.org/pankos#SampleEnvironment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.hz-b.de/instruments#BESSYII -->
+
+    <owl:NamedIndividual rdf:about="http://www.hz-b.de/instruments#BESSYII">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#PhotonSource"/>
+        <pankos:hasInstrument rdf:resource="http://www.hz-b.de/instruments#KMC-2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hz-b.de/instruments#HZB -->
+
+    <owl:NamedIndividual rdf:about="http://www.hz-b.de/instruments#HZB">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Facility"/>
+        <owl:sameAs rdf:resource="http://www.hz-b.de/instruments#HelmholtzZentrumBerlin"/>
+        <pankos:hasSubFacility rdf:resource="http://www.hz-b.de/instruments#BESSYII"/>
+        <dc:description>The Helmholtz-Zentrum Berlin für Materialien und Energie (HZB) operates two scientific large-scale facilities for investigating the structure and function of matter: the research reactor BER II for experiments with neutrons, and the synchrotron radiation source BESSY II, which produces ultrabright photon beams ranging from Terahertz to hard X-rays. Due to this, HZB is one of the few centres world-wide to offer the whole range of instruments for neutron and synchrotron radiation within one laboratory structure.</dc:description>
+        <pankos:preferredName>HZB</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hz-b.de/instruments#HelmholtzZentrumBerlin -->
+
+    <owl:NamedIndividual rdf:about="http://www.hz-b.de/instruments#HelmholtzZentrumBerlin">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Facility"/>
+        <pankos:hasSubFacility rdf:resource="http://www.hz-b.de/instruments#BESSYII"/>
+        <pankos:preferredName>HZB</pankos:preferredName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hz-b.de/instruments#KMC-2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.hz-b.de/instruments#KMC-2">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#Instrument"/>
+        <pankos:hasSampleEnvironment rdf:resource="http://www.hz-b.de/instruments#SE-1"/>
+        <pankos:supportsTechnique rdf:resource="http://www.purl.org/pankos#AnomalousScattering"/>
+        <pankos:supportsTechnique rdf:resource="http://www.purl.org/pankos#EXAFS"/>
+        <pankos:supportsTechnique rdf:resource="http://www.purl.org/pankos#ElasticScattering"/>
+        <pankos:supportsTechnique rdf:resource="http://www.purl.org/pankos#MicroXRF"/>
+        <pankos:supportsTechnique rdf:resource="http://www.purl.org/pankos#NEXAFS"/>
+        <pankos:supportsTechnique rdf:resource="http://www.purl.org/pankos#PowderDiffraction"/>
+        <pankos:supportsTechnique rdf:resource="http://www.purl.org/pankos#SurfaceDiffraction"/>
+        <pankos:supportsTechnique rdf:resource="http://www.purl.org/pankos#WideAngleScattering"/>
+        <pankos:supportsTechnique rdf:resource="http://www.purl.org/pankos#WideAngleX-RayScattering"/>
+        <pankos:supportsTechnique rdf:resource="http://www.purl.org/pankos#X-RayFluorescence"/>
+        <pankosv2CallipsoNeXus:energyRangeMax rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15000</pankosv2CallipsoNeXus:energyRangeMax>
+        <pankosv2CallipsoNeXus:energyRangeMin rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4000</pankosv2CallipsoNeXus:energyRangeMin>
+        <pankosv2CallipsoNeXus:energyResolution>1/4000</pankosv2CallipsoNeXus:energyResolution>
+        <pankosv2CallipsoNeXus:fluxOnSampleMax>1 * 1010 [ph/s] @ 8 [keV]</pankosv2CallipsoNeXus:fluxOnSampleMax>
+        <pankosv2CallipsoNeXus:spotSizeOnSampleHor>5 - 250</pankosv2CallipsoNeXus:spotSizeOnSampleHor>
+        <pankosv2CallipsoNeXus:spotSizeOnSampleVert>5 - 600</pankosv2CallipsoNeXus:spotSizeOnSampleVert>
+        <dc:description>The beamline provides an experimental set-up for EXAFS, XANES, and X-Ray fluorescence measurements at-air in the energy range of 4 keV – 15 keV. Beam intensity is stabilized by MOSTAB electronics with an accuracy of 0.3 %.</dc:description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hz-b.de/instruments#SE-1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.hz-b.de/instruments#SE-1">
+        <rdf:type rdf:resource="http://www.purl.org/pankos#SampleEnvironment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.purl.org/pankos#AnomalousScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#AnomalousScattering"/>
+    
+
+
+    <!-- http://www.purl.org/pankos#EXAFS -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#EXAFS"/>
+    
+
+
+    <!-- http://www.purl.org/pankos#ElasticScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#ElasticScattering"/>
+    
+
+
+    <!-- http://www.purl.org/pankos#MicroXRF -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#MicroXRF"/>
+    
+
+
+    <!-- http://www.purl.org/pankos#NEXAFS -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#NEXAFS"/>
+    
+
+
+    <!-- http://www.purl.org/pankos#PowderDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#PowderDiffraction"/>
+    
+
+
+    <!-- http://www.purl.org/pankos#SurfaceDiffraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#SurfaceDiffraction"/>
+    
+
+
+    <!-- http://www.purl.org/pankos#WideAngleScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#WideAngleScattering"/>
+    
+
+
+    <!-- http://www.purl.org/pankos#WideAngleX-RayScattering -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#WideAngleX-RayScattering"/>
+    
+
+
+    <!-- http://www.purl.org/pankos#X-RayFluorescence -->
+
+    <owl:NamedIndividual rdf:about="http://www.purl.org/pankos#X-RayFluorescence"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
